@@ -1,0 +1,73 @@
+@import url("reset.css");
+
+li.item {
+    color: blue;
+}
+
+.point {
+    color: yellow;
+}
+
+h1 {
+    color: yellowgreen;
+}
+
+.text .main-text {
+    color: blue;
+}
+
+.text .other-text {
+    color: yellow;
+}
+
+h2 {
+    color: orange;
+}
+
+#some-info {
+    color: red;
+}
+
+div p {
+    color: green;
+}
+
+.main-info {
+    color: purple;
+}
+
+.production-text {
+    color: pink;
+}
+
+h3 {
+    color: brown;
+}
+
+li {
+    color: olive;
+}
+
+li.orange {
+    color: orange;
+}
+
+#characters-text {
+    color: blueviolet;
+}
+
+p.culture-text {
+    color: darkcyan;
+}
+
+.culture-info {
+    color: darkgoldenrod;
+}
+#ukraine {
+    color: white;
+    background-color: black;
+}
+
+p a{
+    color: red;
+}
