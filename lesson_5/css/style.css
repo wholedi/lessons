@@ -1,0 +1,202 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;500;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&display=swap');
+
+
+@import url("fonts.css");
+
+@import url("reset.css");
+
+body {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    color: #7D7D7D;
+}
+
+.link,
+.title,
+.text {
+    font-family: "Roboto", sans-serif;
+}
+
+.link {
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #690979;
+}
+
+.title {
+    font-weight: 700;
+    font-size: 30px;
+    line-height: 1.25;
+    color: #000000;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
+    text-decoration: underline #690979;
+    text-align: center;
+}
+
+.text {
+    text-align: right;
+    font-size: 18px;
+    line-height: 1.25;
+    color: #690979;
+    text-decoration: wavy underline #000000;
+}
+
+.subtitle,
+.subtitle-text,
+.highlights {
+    font-family: 'Pixelify Sans', cursive;
+}
+
+.subtitle {
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+    color: #0ccb0c;
+    text-decoration: line-through rgba(0, 0, 0, 0.25);
+}
+
+.subtitle-text {
+    font-size: 18px;
+    line-height: 1.25;
+    color: #0ccb55;
+    text-decoration: wavy underline #000000;
+    text-transform: capitalize;
+    text-indent: 30px;
+}
+
+.highlights {
+    font-weight: 500;
+    font-size: 20px;
+    background-color: rgba(0, 0, 0, 0.25);
+    letter-spacing: 3px;
+}
+
+.info-subtitle,
+.info-text,
+.info-highlights {
+    font-family: 'Martian Mono', monospace;
+}
+
+.info-subtitle {
+    font-weight: 800;
+    font-size: 20px;
+    text-align: center;
+    text-decoration: dashed underline overline #690979;
+}
+
+.info-text {
+    font-size: 18px;
+    line-height: 2;
+    color: #690979;
+    text-decoration: wavy underline #0ccb55;
+    text-transform: uppercase;
+    word-spacing: 5px;
+    text-indent: 30px;
+}
+
+.info-highlights {
+    font-weight: 500;
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0.25);
+    white-space: nowrap;
+}
+
+.fonts-subtitle,
+.fonts-text,
+.fonts-highlights {
+    font-family: 'AnekBangla_Condensed', sans-serif;
+}
+
+.fonts-subtitle {
+    font-size: 40px;
+    font-weight: 700;
+    color: #690979;
+    text-align: center;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.25);
+    text-decoration: dashed underline overline #0ccb55;
+}
+
+.fonts-text {
+    font-size: 20px;
+    text-align: right;
+    text-transform: lowercase;
+    color: #0c30cb;
+    line-height: 2;
+    text-decoration: wavy underline #690979;
+}
+
+.fonts-highlights {
+    font-weight: 500;
+    font-size: 24px;
+    background-color: rgba(0, 0, 0, 0.25);
+    white-space: nowrap;
+}
+
+.source-subtitle,
+.source-text,
+.source-highlights {
+    font-family: 'SourceSansPro', sans-serif;
+}
+
+.source-subtitle {
+    font-size: 50px;
+    font-weight: 700;
+    color: #cb0cba;
+    text-align: center;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.9);
+    text-decoration: dashed underline overline #0ccb55;
+}
+
+.source-text {
+    font-size: 20px;
+    text-transform: lowercase;
+    color: #ef06ab;
+    line-height: 2;
+    text-decoration: line-through #00d4ff;
+}
+
+.source-highlights {
+    font-weight: 300;
+    font-size: 24px;
+    background-color: #f9ff00;
+    line-height: 2;
+}
+/*------------------------------------------------------------------*/
+.first-title {
+    font-family: 'Poppins', sans-serif;
+    font-size: 30px;
+    font-weight: 600;
+    color: #37393F;
+    line-height: 1.27;
+}
+
+.first-text,
+.second-text{
+    line-height: 1.46;
+}
+
+.first-highlights {
+    font-family: 'Poppins', sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.27;
+    color: #6B77E5;
+}
+
+.second-title{
+    font-family: "Poppins", sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    color: #37393F;
+    line-height: 1.27;
+}
+
+.second-item {
+    font-weight: 500;
+    line-height: 1.46;
+}

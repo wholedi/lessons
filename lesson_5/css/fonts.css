@@ -1,0 +1,58 @@
+@font-face {
+    font-family: "AnekBangla_Condensed";
+    src:
+            url("../fonts/anek/AnekBangla_Condensed-Regular.woff2") format("woff2"),
+            url("../fonts/anek/AnekBangla_Condensed-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "AnekBangla_Condensed";
+    src:
+            url("../fonts/anek/AnekBangla_Condensed-Medium.woff2") format("woff2"),
+            url("../fonts/anek/AnekBangla_Condensed-Medium.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "AnekBangla_Condensed";
+    src:
+            url("../fonts/anek/AnekBangla_Condensed-Bold.woff2") format("woff2"),
+            url("../fonts/anek/AnekBangla_Condensed-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+/*----------------------------------------------------------------------------*/
+
+@font-face {
+    font-family: "SourceSansPro";
+    src: url("../fonts/source/SourceSansPro-Light.woff2") format("woff2"),
+    url("../fonts/source/SourceSansPro-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SourceSansPro";
+    src: url("../fonts/source/SourceSansPro-Regular.woff2") format("woff2"),
+    url("../fonts/source/SourceSansPro-Regular.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "SourceSansPro";
+    src: url("../fonts/source/SourceSansPro-Bold.woff2") format("woff2"),
+    url("../fonts/source/SourceSansPro-Bold.woff") format("woff");
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
