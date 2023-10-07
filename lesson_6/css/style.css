@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Text&display=swap');
+
+@import url("reset.css");
+
+body {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    color: #7D7D7D;
+}
+#layout {
+    margin-bottom: 50px;
+}
+
+.first {
+    max-width: 692px;
+    margin: 0 auto;
+}
+
+.image {
+    margin-bottom: 37px;
+}
+
+.title,
+.subtitle,
+.title-item {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    line-height: 1.27;
+}
+
+.title {
+    font-size: 30px;
+    color: #37393F;
+    margin-bottom: 12px;
+}
+
+.text {
+    margin-bottom: 42px;
+}
+
+.subtitle {
+    color: #6B77E5;
+    font-size: 20px;
+    margin-bottom: 12px;
+}
+
+.text-two {
+    margin-bottom: 40px;
+}
+
+.text,
+.text-block {
+    line-height: 1.46;
+}
+
+.image-two {
+    width: 331px;
+    margin-right: 29px;
+}
+
+.block-info {
+    font-size: 0;
+}
+
+.info {
+    display: inline-block;
+    width: 332px;
+    font-size: 18px;
+}
+
+.title-item {
+    font-size: 25px;
+    color: #37393F;
+    margin-bottom: 15px;
+}
+
+.title-item-green {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    color: #40DDB6;
+    font-size: 20px;
+    margin-bottom: 21px;
+}
+
+.item-two li {
+    margin-bottom: 35px;
+    line-height: 1.27;
+}
+
+/*-----------------------------second-------------------------------------------*/
+
+.second {
+    font-size: 0;
+    background-color: #FFF9F4;
+    max-width: 1169px;
+    margin: 0 auto;
+}
+
+.text-block {
+    display: inline-block;
+    width: 563px;
+    font-size: 18px;
+}
+
+.title-second {
+    color: #D06B00;
+    font-size: 28px;
+    padding-top: 21px;
+    margin-bottom: 13px;
+}
+
+.subtitle-second {
+    font-family: "DM Serif Text", serif;
+    line-height: 1.46;
+    font-size: 59px;
+    color: #0E333D;
+    margin-bottom: 35px;
+}
+
+.text-second {
+    font-size: 20px;
+    color: #474747;
+    line-height: 1.8;
+}
+
+.img-three {
+    margin-left: 38px;
+}
+
+.img-four {
+    margin-left: 22px;
+}
+
+/*-----------------------------------test------------------------------------*/
+
+#test {
+    max-width: 692px;
+    margin: 0 auto;
+}
+
+.test-one {
+    background-color: olive;
+    color: black;
+    padding: 20px;
+}
+
+.test-two,
+.test-three,
+.test-four {
+    color: white;
+}
+.test-two {
+    background-color: red;
+    padding: 30px 40px;
+    margin-top: -30px;
+    margin-bottom: 50px;
+}
+
+.test-two p {
+    margin-bottom: 20px;
+}
+
+.test-three {
+    min-width: 200px;
+    background-color: blue;
+    padding: 30px 40px 20px;
+    margin: 30px;
+}
+
+.test-four {
+    max-height: 500px;
+    background-color: green;
+    padding: 30px 40px 20px 18px;
+}
