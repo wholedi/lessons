@@ -7,6 +7,10 @@ body {
     color: #7D7D7D;
 }
 
+#layout {
+    margin-bottom: 100px;
+}
+
 .licencing-block {
     width: 1218px;
     margin: 0 auto;
@@ -113,7 +117,7 @@ body {
     margin-bottom: 35px;
 }
 
-.project-text p{
+.project-text p {
     margin-bottom: 35px;
 }
 
@@ -204,15 +208,22 @@ body {
     font-size: 0;
 }
 
-.jewels-text-block {
+.jewels-text-block,
+.img-block,
+.img-block-two {
+    vertical-align: middle;
     display: inline-block;
+}
+
+.jewels-text-block {
     width: 503px;
     padding-top: 70px;
     margin-right: 75px;
 }
+
 .jewels-subtitle,
 .jewels-title,
-.jewels-text{
+.jewels-text {
     font-family: "Cormorant Infant", serif;
 }
 
@@ -237,16 +248,92 @@ body {
 }
 
 .img-block {
-    display: inline-block;
     border-radius: 235px;
     border: 1px solid #502203;
     width: 177px;
     height: 336px;
+    margin-right: 20px;
 }
 
 .img {
-    margin: 14px;
+    border-radius: 235px;
+    padding-top: 14px;
+    margin-left: -10px;
 }
+
+.img-block-two {
+    width: 308px;
+    height: 506px;
+    border-radius: 235px;
+    border: 1px solid #502203;
+}
+
+.img-two {
+    border-radius: 235px;
+    padding-top: 19px;
+    margin-left: -11px;
+}
+
+
+/*----------------------------------test----------------------------------*/
+#test {
+    width: 1218px;
+    margin: 0 auto;
+}
+
+.test-one {
+    color: #37393F;
+    background-color: #8A33FD;
+    padding: 30px;
+    border: 5px solid #F4F135;
+    margin-bottom: 50px;
+    border-radius: 10px 20px;
+    box-shadow: inset 2px 10px 10px 3px #F551E0;
+}
+
+.link-test {
+    color: #F4F135;
+    border-bottom: 1px solid;
+}
+
+.link-test:hover {
+    color: #F551E0;
+    border-bottom: 1px solid;
+}
+
+.test-two {
+    background-color: #8A33FD;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    box-shadow: 3px 10px 5px 3px #F4F135,
+    5px 3px 3px 5px #F551E0;
+    margin-bottom: 50px;
+}
+
+.test-tree {
+    color: #fff;
+    background-color: #8A33FD;
+    padding: 30px;
+    border: 5px solid #F551E0;
+    border-radius: 50px;
+    box-shadow: inset 3px 10px 5px 3px #F4F135;
+    margin-bottom: 50px;
+}
+
+.test-four {
+    background-color: #40DDB6;
+    border-radius: 30px 60px 80px 10px;
+    opacity: 0.5;
+}
+
+.test-five {
+    visibility: hidden;
+}
+
+
+
+
 
 
 
