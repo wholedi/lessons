@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500&;600&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;@600&display=swap');
-
+@import url("fonts.css");
 @import url("reset.css");
 
 main {
@@ -24,7 +22,7 @@ main {
 }
 
 .test-three {
-    background-image: linear-gradient(90deg, rgba(11,255,232,0.9360994397759104) 0%, rgba(255,0,198,0.8352591036414566) 100%);
+    background-image: linear-gradient(90deg, rgba(11, 255, 232, 0.9360994397759104) 0%, rgba(255, 0, 198, 0.8352591036414566) 100%);
     margin-bottom: 30px;
 }
 
@@ -55,15 +53,14 @@ main {
 }
 
 .test-eight {
-    background: pink linear-gradient(90deg, rgba(11,255,232,0.9360994397759104) 0%, rgba(255,0,198,0.8352591036414566) 100%) center / 100% 50% no-repeat;
+    background: pink linear-gradient(90deg, rgba(11, 255, 232, 0.9360994397759104) 0%, rgba(255, 0, 198, 0.8352591036414566) 100%) center / 100% 50% no-repeat;
     margin-bottom: 30px;
 }
 
 .test-nine {
-    background:
-            url("../img/sea.jpg") 0 0 / 200px no-repeat,
-            url("../img/boots.jpg") 50% / 500px no-repeat,
-            linear-gradient(90deg, #ff3f3a 0%, #3a3dff 50%, #f75e05 100%);
+    background: url("../img/sea.jpg") 0 0 / 200px no-repeat,
+    url("../img/boots.jpg") 50% / 500px no-repeat,
+    linear-gradient(90deg, #ff3f3a 0%, #3a3dff 50%, #f75e05 100%);
 }
 
 /*----------------------------------------layout---------------------------*/
@@ -75,7 +72,8 @@ main {
     color: #7D7D7D;
 }
 
-.title-first {
+.title {
+    display: inline-block;
     font-weight: 500;
     color: #37393F;
     background: url("../img/box.png") 0 2px no-repeat;
@@ -83,7 +81,7 @@ main {
     margin-bottom: 16px;
 }
 
-.subtitle-first {
+.subtitle {
     max-width: 413px;
     font-family: "Poppins", sans-serif;
     color: #37393F;
@@ -93,7 +91,7 @@ main {
     margin-bottom: 20px;
 }
 
-.text-first {
+.text {
     max-width: 673px;
     line-height: 1.46;
     margin-bottom: 20px;
@@ -112,7 +110,7 @@ main {
     font-size: 20px;
     line-height: 1.65;
     margin-bottom: 23px;
-    min-height: 30px ;
+    min-height: 30px;
     background: url("../img/check.svg") 0 3px no-repeat;
     padding-left: 35px;
     color: #37393f;
@@ -172,8 +170,177 @@ main {
     text-transform: capitalize;
 }
 
+/*---------------------------------layout-second------------------------*/
 
+.layout-second {
+    margin: 50px auto;
+    width: 1231px;
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    color: #7D7D7D;
+}
 
+.title-block-center {
+    text-align: center;
+    margin-bottom: 47px ;
+}
 
+.title-mb-14 {
+    margin-bottom: 14px;
+}
 
+.subtitle-mb-14 {
+    max-width: none;
+    margin-bottom: 14px;
+}
 
+.text-mb-14 {
+    max-width: 852px;
+    line-height: 1.46;
+    margin: 0 auto 14px;
+}
+
+.item-block {
+    display: inline-block;
+    max-width: 384px;
+    margin-right: 34px;
+}
+
+.img {
+    margin-bottom: 24px;
+}
+
+.subtitle-item {
+    color: #37393F;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.27;
+    margin-bottom: 10px;
+}
+.date {
+    font-size: 14px;
+    line-height: 1.46;
+    background: url("../img/calendar.svg")  0 0 / 22px 22px no-repeat;
+    min-height: 22px;
+    padding-left: 25px;
+}
+
+.block-mr-0 {
+    margin-right: 0;
+}
+
+.item-top {
+    margin-bottom: 58px;
+}
+/*-----------------------------------------layout-third-------------------*/
+.layout-third {
+    width: 1240px;
+    margin: 50px auto;
+    color: #807D7E;
+    font-family: "Causten", sans-serif;
+    font-size: 20px;
+}
+
+.title-bg {
+    background: url("../img/paragraph.svg") 0 2px / 6px 28px no-repeat;
+    padding-left: 21px;
+    min-height: 28px;
+    color: #3C4242;
+    font-family: "Core Sans C", sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.56px;
+    margin-bottom: 30px;
+}
+
+.info-block {
+    padding-left: 21px;
+}
+
+.subtitle-gray {
+    color: #807D7E;
+    font-family: "Core Sans C", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.2;
+    letter-spacing: 0.4px;
+    margin-bottom: 25px;
+}
+
+.text-causten {
+    line-height: 1.2;
+    letter-spacing: 0.4px;
+    margin-bottom: 25px;
+}
+
+.text-causten p {
+    margin-bottom: 20px;
+}
+
+.highlights {
+    font-weight: 700;
+}
+
+.subtitle-gray-mb0 {
+    margin-bottom: 0;
+}
+
+/*-----------------------------------------layout-fourth-------------------*/
+.layout-fourth {
+    width: 1270px;
+    margin: 50px auto;
+    color: #fff;
+    font-size: 0;
+}
+
+.content {
+    display: inline-block;
+    width: 50%;
+    vertical-align: top;
+    background: url(../img/leaves.png) no-repeat center / cover;
+    height: 640px;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    padding: 183px 74px 174px;
+}
+
+.title-white {
+    color: #FFF;
+    font-family: "Core Sans C", sans-serif;
+    font-size: 34px;
+    font-weight: 700;
+    line-height: 1.47;
+    letter-spacing: 0.21px;
+    margin-bottom: 30px;
+}
+
+.subtitle-white {
+    color: #FFF;
+    font-family: "Causten", sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+}
+
+.link-button {
+    color: #3C4242;
+    text-align: center;
+    font-family: "Causten", sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    background: #FFFFFF;
+    width: 168px;
+    height: 46px;
+    padding: 12px 44px;
+    border-radius: 8px;
+}
+
+.image {
+    display: inline-block;
+    height: 640px;
+    width: 50%;
+    background: url(../img/people.png) no-repeat center / cover;
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
