@@ -1,0 +1,69 @@
+@import url("fonts.css");
+@import url("reset.css");
+
+.header {
+    width: 1300px;
+    margin: 10px auto 50px;
+}
+
+.header-menu li:not(:last-child){
+    margin-bottom: 10px;
+}
+
+.item {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.link {
+    font-family: 'Nosifer', sans-serif;
+    font-size: 20px;
+    color: #6B77E5;
+}
+
+.link:hover {
+    color: #40DDB6;
+    text-decoration: underline;
+}
+
+.business-management {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: #7D7D7D;
+    margin: 0 auto;
+    width: 692px;
+}
+
+.title,
+.subtitle {
+    font-family: "Poppins",sans-serif;
+    font-weight: 600;
+    line-height: 1.27;
+    margin-bottom: 12px;
+}
+
+.title {
+    font-size: 30px;
+    color: #37393F;
+}
+
+.text {
+    line-height: 1.46;
+    margin-bottom: 42px;
+}
+
+.subtitle {
+    font-size: 20px;
+    color: #6B77E5;
+}
+
+/*--------------------------------footer--------------------------------------*/
+
+.footer {
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.footer-menu li:not(:last-child){
+    margin-bottom: 10px;
+}
