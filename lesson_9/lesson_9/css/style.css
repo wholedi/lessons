@@ -1,0 +1,316 @@
+@import url("fonts.css");
+@import url("reset.css");
+
+.header {
+    width: 1300px;
+    margin: 10px auto 50px;
+}
+
+.header-menu li:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.item {
+    display: inline-block;
+    margin-right: 15px;
+}
+
+.link {
+    font-family: 'Nosifer', sans-serif;
+    font-size: 20px;
+    color: #6B77E5;
+}
+
+.link:hover {
+    color: #40DDB6;
+    text-decoration: underline;
+}
+
+.link:visited {
+    color: #e5d955;
+}
+
+/*--------------------------------------------------------------------------*/
+
+.business-management {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: #7D7D7D;
+    margin: 0 auto 100px;
+    width: 692px;
+}
+
+.title,
+.subtitle,
+.benefits-title,
+.benefits-subtitle,
+.card-info {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    line-height: 1.27;
+}
+
+.title {
+    font-size: 30px;
+    color: #37393F;
+    margin-bottom: 12px;
+}
+
+.text {
+    line-height: 1.46;
+    margin-bottom: 42px;
+}
+
+.text p:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    font-size: 20px;
+    color: #6B77E5;
+    margin-bottom: 12px;
+}
+
+.benefits {
+    font-size: 0;
+}
+
+.benefits-img {
+    max-width: 331px;
+    margin-right: 29px;
+}
+
+.benefits-content {
+    display: inline-block;
+    max-width: 332px;
+    font-size: 18px;
+}
+
+.benefits-title {
+    color: #37393F;
+    font-size: 25px;
+    margin-bottom: 15px;
+}
+
+.benefits-subtitle {
+    color: #40DDB6;
+    font-size: 20px;
+    margin-bottom: 21px;
+}
+
+.benefits-list li:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.benefits-list li::before {
+    content: "";
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    vertical-align: -6px;
+    background: url(../img/check.svg) center / 27px 27px no-repeat;
+    margin-right: 8px;
+}
+
+/*-----------------------------------------------------------------------*/
+.business-plan {
+    width: 675px;
+    margin: 0 auto 100px;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: #7D7D7D;
+}
+
+.business-plan > *:not(:last-child) {
+    margin-bottom: 48px;
+}
+
+.label,
+.title-700,
+.title-card,
+.card-info {
+    color: #37393F;
+}
+
+.label {
+    font-weight: 500;
+    margin-bottom: 16px;
+}
+
+.title-700 {
+    font-family: "Poppins", sans-serif;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 1.2;
+}
+
+.title-business {
+    max-width: 413px;
+}
+
+.label::before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: #40DDB6;
+    margin-right: 6px;
+    vertical-align: 1px;
+}
+
+.business-plan-text {
+    line-height: 1.46;
+}
+
+.business-plan-text :not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.business-plan-card {
+    padding: 28px 41px 28px 38px;
+    width: 100%;
+    border: 1px solid #E3E3E3;
+}
+.business-plan-card-block >*:not(:last-child) {
+    margin-bottom: 31px;
+}
+
+.business-plan-card *:not(:last-child) {
+    margin-bottom: 12px;
+}
+
+.title-card {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.text-card {
+    line-height: 1.46;
+    padding-left: 46px;
+}
+
+.title-card::before {
+    content: "";
+    display: inline-block;
+    width: 27px;
+    height: 27px;
+    vertical-align: -6px;
+    background: url(../img/check.svg) center / 27px 27px no-repeat;
+    margin-right: 19px;
+}
+
+.button {
+    color: #FFF;
+    padding: 21px 35px 22px 35px;
+    background: #6B77E5;
+}
+
+.button:hover {
+    background: #9fa8ea;
+}
+
+.work-process {
+    width: 1220px;
+    margin: 0 auto 100px;
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    color: #7D7D7D;
+}
+
+.work-process > *:not(:last-child) {
+    margin-bottom: 41px;
+}
+
+.title-block-center {
+    text-align: center;
+}
+
+.title-block > *:not(:last-child) {
+    margin-bottom: 16px;
+}
+
+.card-block {
+    font-size: 0;
+    padding-top: 36px;
+}
+
+.card {
+    display: inline-block;
+    text-align: center;
+    max-width: 386px;
+    padding: 58px 43px;
+    background-color: #F4F4F4;
+    font-size: 18px;
+}
+
+.card:hover {
+    box-shadow: 2px 3px 2px rgba(0, 0, 0, 0.25);
+}
+
+.card:not(:last-child) {
+    margin-right: 31px;
+}
+
+.card-img {
+    width: 72px;
+    height: 72px;
+    margin: -95px 0 auto;
+}
+
+.card-img :not(:last-child) {
+    margin-bottom: 22px;
+}
+
+.card-info {
+    margin-bottom: 16px;
+}
+
+.text-margin {
+    margin-bottom: 37px;
+}
+
+.card-link {
+    font-weight: 600;
+    color: #6B77E5;
+}
+/*-----------------------------------------------------------------------------*/
+.jewels {
+    width: 1214px;
+    margin: 0 auto 100px;
+    font-family: 'Cormorant Infant', serif;
+    color: #000;
+}
+
+.jewels-text-block {
+    display: inline-block;
+    vertical-align: top;
+    max-width: 488px;
+    padding-top: 150px;
+    margin-right: 3px;
+}
+
+.jewels-title {
+    font-size: 60px;
+    line-height: 1.2;
+}
+
+.jewels-title::after {
+    content: "";
+    display: block;
+    width: 60%;
+    height: 3px;
+    margin-top: 13px;
+    background: #78473b;
+}
+
+/*--------------------------------footer--------------------------------------*/
+
+.footer {
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.footer-menu li:not(:last-child) {
+    margin-bottom: 10px;
+}
