@@ -1,6 +1,10 @@
 @import url("fonts.css");
 @import url("reset.css");
 
+.main > *:not(:last-child) {
+    margin-bottom: 100px;
+}
+
 .header {
     width: 1300px;
     margin: 10px auto 50px;
@@ -171,7 +175,8 @@
     width: 100%;
     border: 1px solid #E3E3E3;
 }
-.business-plan-card-block >*:not(:last-child) {
+
+.business-plan-card-block > *:not(:last-child) {
     margin-bottom: 31px;
 }
 
@@ -274,6 +279,7 @@
     font-weight: 600;
     color: #6B77E5;
 }
+
 /*-----------------------------------------------------------------------------*/
 .jewels {
     width: 1214px;
@@ -304,6 +310,148 @@
     background: #78473b;
 }
 
+.jewels-card {
+    display: inline-block;
+    max-width: 344px;
+    vertical-align: top;
+    padding-top: 35px;
+}
+
+.jewels-card:last-child {
+    padding-top: 0;
+}
+
+.jewels-card:not(:last-child) {
+    margin-right: 40px;
+}
+
+.border {
+    border: 1px solid #000;
+    margin-bottom: 25px;
+}
+
+.jewels-img {
+    margin: 9px -10px -9px 10px;
+}
+
+.jewels-info,
+.price {
+    font-size: 24px;
+    line-height: 1.4;
+}
+
+.jewels-new {
+    font-size: 46px;
+    line-height: 1.2;
+    max-width: 339px;
+    margin-bottom: 31px;
+}
+
+/*----------------------------------------------------------------------------*/
+.cake {
+    width: 1240px;
+    margin: 0 auto 100px;
+    font-family: 'Cormorant Infant', serif;
+    color: #705A66;
+}
+
+.cake-title {
+    font-size: 60px;
+    text-align: center;
+    margin-bottom: 24px;
+
+}
+
+.button-block:not(:last-child) {
+    margin-bottom: 64px;
+}
+
+.button-block a:not(:last-child) {
+    margin-right: 32px;
+}
+
+.category {
+    font-size: 18px;
+    padding: 10px 30px;
+    height: 42px;
+    border-radius: 100px;
+    border: 1px solid #705A66;
+}
+
+.category:hover {
+    background: #705A66;
+    color: #FFF;
+}
+
+.category:active {
+    background: #331f2a;
+}
+
+.cake-card {
+    max-width: 393px;
+}
+
+.cake-card:hover {
+    box-shadow: 6px 10px 2px rgba(0, 0, 0, 0.25);
+}
+
+.cake-card-block > *:not(:last-child) {
+    margin-right: 25px;
+}
+
+.cake-card > *:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 24px;
+}
+
+.card-title::after {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    vertical-align: -6px;
+    background: url(../img/basket.svg) center / 27px 27px no-repeat;
+    float: right;
+}
+
+.cake-card-info > *:not(:last-child) {
+    margin-bottom: 10px;
+}
+
+.card-price {
+    font-size: 18px;
+}
+
+.test-child {
+    width: 1200px;
+    margin: 0 auto 100px;
+    font-family: 'Cormorant Infant', serif;
+    font-size: 18px;
+    color: #000;
+}
+
+.test-child div:first-child:hover {
+    background-color: #f3a5e6;
+}
+
+.test-child p:first-of-type  {
+    padding: 10px;
+    border: 1px solid #000;
+    border-radius: 10px;
+}
+
+.test-child p:first-of-type:hover {
+    background-color: #ccd7e8;
+}
+
+.test-child > *:not(:last-child) {
+    margin-bottom: 30px;
+}
+
+.test-child p:
 /*--------------------------------footer--------------------------------------*/
 
 .footer {
