@@ -433,14 +433,21 @@
     color: #000;
 }
 
-.test-child div:first-child:hover {
-    background-color: #f3a5e6;
+.test-child p {
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 10px;
 }
 
-.test-child p:first-of-type  {
-    padding: 10px;
-    border: 1px solid #000;
+.test-child div:first-child {
+    font-size: 20px;
+    text-align: center;
+    background-color: rgba(234, 214, 229, 0.38);
     border-radius: 10px;
+}
+
+.test-child p:first-of-type {
+    border-color: black;
 }
 
 .test-child p:first-of-type:hover {
@@ -451,7 +458,124 @@
     margin-bottom: 30px;
 }
 
-.test-child p:
+.test-child p:nth-child(4) {
+    border-color: #f3a5e6;
+}
+
+.test-child p:nth-child(6) {
+    border-color: #96f666;
+}
+
+
+.test-child p:nth-child(odd) {
+    border-color: #6B77E5;
+}
+
+.game {
+    max-width: 600px;
+    padding: 10px;
+    margin: 0 auto;
+    text-align: center;
+    font-family: 'Nosifer', sans-serif;
+    font-size: 20px;
+}
+
+.game-button {
+    padding: 10px 20px;
+    border-radius: 10px;
+    background-color: #6B77E5;
+    color: #fff;
+}
+
+.game-button:hover {
+    color: #6B77E5;
+    background-color: #40DDB6;
+}
+
+.game-card {
+    display: none;
+    width: 100%;
+    height: 600px;
+    background-color: #f3a5e6;
+    text-align: right;
+    margin-top: 30px;
+}
+
+.game-card:target {
+    display: block;
+}
+
+.start {
+    display: inline-block;
+    padding: 10px;
+    color: #FFFFFF;
+    background-color: #6B77E5;
+}
+
+.start:hover + .line-1,
+.line-1:hover, .line-1:hover + .line-2, .line-2:hover,
+.line-2:hover, .line-2:hover + .line-3, .line-3:hover,
+.line-3:hover, .line-3:hover + .line-4, .line-4:hover,
+.line-4:hover, .line-4:hover + .line-5, .line-5:hover,
+.line-5:hover, .line-5:hover + .line-6, .line-6:hover
+{
+    visibility: visible;
+}
+
+.line {
+    display: block;
+    visibility: hidden;
+    width: 100%;
+    height: 100%;
+    background-color: #6B77E5;
+}
+
+/*.line:hover {*/
+/*    visibility: visible;*/
+/*}*/
+
+.line-1 {
+    width: 140px;
+    height: 40px;
+    margin: -40px 0 0 377px;
+}
+
+.line-2 {
+    width: 40px;
+    height: 200px;
+    margin: -40px 0 0 377px;
+}
+
+.line-3 {
+    width: 400px;
+    height: 40px;
+    margin: -35px 0 0 16px;
+}
+
+.line-4 {
+    width: 40px;
+    height: 300px;
+    margin: -40px 0 0 16px;
+}
+
+.line-5 {
+    width: 500px;
+    height: 40px;
+    margin: -35px 0 0 16px;
+}
+
+.line-6 {
+    width: 40px;
+    height: 100px;
+    margin: -35px 0 0 476px;
+}
+
+.win {
+    width: 160px;
+    height: 160px;
+}
+
+
 /*--------------------------------footer--------------------------------------*/
 
 .footer {
