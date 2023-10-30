@@ -1,0 +1,28 @@
+@import url("reset.css");
+
+body {
+    font-size: 20px;
+}
+.header,
+.footer {
+    padding: 20px;
+    text-align: center;
+    margin-bottom: 50px;
+    background-color: #f1f1f1;
+}
+
+main {
+    text-align: center;
+}
+
+main >*:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+.bg {
+    background-color: #000;
+}
+
+.mw {
+    max-width: 800px;
+}
