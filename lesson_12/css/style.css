@@ -132,7 +132,7 @@ body {
 }
 
 .main--padding-margin > *:not(:last-child) {
-    margin-bottom: 100px;
+    margin-bottom: 200px;
 }
 
 .main--relative {
