@@ -39,14 +39,21 @@ body {
     margin-bottom: 100px;
 }
 
+.block--mb > *:not(:last-child) {
+    margin-bottom: 100px;
+
+}
+
 .block__practice {
-    display: inline-block;
     text-align: center;
     font-size: 0;
 }
 
-.block__practice > *:not(:last-child) {
+.practice__container div:not(:last-child) {
     margin-right: 40px;
+}
+
+.block__practice > div:not(:last-child) {
     margin-bottom: 40px;
 }
 
