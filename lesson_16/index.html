@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lesson 16 - HTML форми</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+</head>
+<body>
+<div class="wrapper">
+    <header class="header">
+        <div class="header__container">
+            <div class="header__logo">
+                <img src="img/header/logo.svg" alt="Euphoria - keep it classy">
+            </div>
+            <div class="header__menu menu">
+                <ul class="menu__list">
+                    <li class="menu__item"><a href="#" class="menu__link">Shop</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link">Men</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link">Women</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link">Combos</a></li>
+                    <li class="menu__item"><a href="#" class="menu__link">Joggers</a></li>
+                </ul>
+            </div>
+            <div class="header__form form">
+                <form class="form__wrapper search" action="#">
+                    <label>
+                        <input name="search" value="" type="search" class="search__input" placeholder="Search">
+                        <img class="search__icon" src="img/header/search.svg" alt="Search">
+                    </label>
+                </form>
+            </div>
+            <div class="header__button button">
+                <a type="button" class="button__header">
+                    <img src="img/header/favorite.svg" alt="favorite">
+                </a>
+                <a type="button" class="button__header button__header--lilac">
+                    <img src="img/header/user.svg" alt="user">
+                </a>
+                <a type="button" class="button__header">
+                    <img src="img/header/shopping-cart.svg" alt="shopping-cart">
+                </a>
+            </div>
+        </div>
+    </header>
+    <main class="main">
+        <div class="main__container-content form-blank">
+            <div class="form-blank__test">
+                <form action="#" method="GET" class="form-blank__form">
+                    <fieldset class="form-blank__group">
+                        <legend class="form-blank__name">General information</legend>
+                        <div class="form-blank__wrapper-input">
+                            <label class="form-blank__label" for="name">
+                                Your name:
+                                <input required id="name" class="form-blank__input" type="text" name="name" value=""
+                                       placeholder="Enter your name">
+                            </label>
+                        </div>
+                        <div class="form-blank__wrapper-input">
+                            <label class="form-blank__label" for="second-name">
+                                Your second - name:
+                                <input required id="second-name" class="form-blank__input" type="text"
+                                       name="second-name" value=""
+                                       placeholder="Enter your second - name">
+                            </label>
+                        </div>
+                        <div class="form-blank__wrapper-input">
+                            <label class="form-blank__label" for="age">
+                                Your age:
+                                <input required id="age" class="form-blank__input" type="number" name="age" value=""
+                                       minlength="1" maxlength="3" placeholder="Enter your age">
+                            </label>
+                        </div>
+                        <div class="form-blank__wrapper-input">
+                            <label class="form-blank__label" for="tel">
+                                Your phone number:
+                                <input required id="tel" class="form-blank__input" type="tel" name="tel" value=""
+                                       placeholder="Enter your phone number">
+                            </label>
+                        </div>
+                        <div class="form-blank__wrapper-input">
+                            <label class="form-blank__label" for="email">
+                                Your email:
+                                <input required id="email" class="form-blank__input" type="email" name="email" value=""
+                                       placeholder="Enter your email">
+                            </label>
+                        </div>
+                        <div class="form-blank__wrapper-input">
+                            <label class="form-blank__label" for="password">
+                                Your password:
+                                <input required id="password" class="form-blank__input" type="password" name="password"
+                                       value=""
+                                       placeholder="Enter your password">
+                            </label>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-blank__group">
+                        <legend class="form-blank__name">Interesting information</legend>
+                        <div class="form-blank__wrapper-input">
+                            <label class="form-blank__label" for="date">
+                                Your birthday:
+                                <input required id="date" class="form-blank__input" type="date" name="date"
+                                       value="">
+                            </label>
+                        </div>
+                        <div class="form-blank__wrapper-input">
+                            <label class="form-blank__label form-blank__label--center" for="color">
+                                Your favorite color:
+                                <input id="color" class="form-blank__input form-blank__input--another" type="color"
+                                       name="color" value="">
+                            </label>
+                        </div>
+                        <div class="form-blank__wrapper-input">
+                            <label class="form-blank__label form-blank__label--center" for="range">
+                                Your health:
+                                <input id="range" class="form-blank__input form-blank__input--another" type="range"
+                                       name="health" value="">
+                            </label>
+                        </div>
+                    </fieldset>
+                    <fieldset class="form-blank__group">
+                        <legend class="form-blank__name">Do you like eat?</legend>
+                        <div class="form-blank__wrapper-radio">
+                            <label class="form-blank__name-radio">
+                                <input checked class="form-blank__radio" type="radio" name="eat"
+                                       value="yes">
+                                Yes
+                            </label>
+                        </div>
+                        <div class="form-blank__wrapper-radio">
+                            <label class="form-blank__name-radio">
+                                <input class="form-blank__radio" type="radio" name="eat"
+                                       value="no">
+                                No
+                            </label>
+                        </div>
+                    </fieldset>
+                    <div class="form-blank__lock-agreement">
+                        <label class="form-blank__text-agreement">
+                            <input required class="form-blank__checkbox" type="checkbox" name="agreement" value="">
+                            I agree with the terms of the agreement
+                        </label>
+                    </div>
+                    <div class="form-blank__group-button">
+                        <button class="form-blank__button" type="submit">Send</button>
+                        <button class="form-blank__button form-blank__button--gray" type="reset">Reset</button>
+                    </div>
+                </form>
+            </div>
+            <div class="form-blank__info info">
+                <div class="info__block-title">
+                    <h2 class="info__title">My info</h2>
+                    <p class="info__subtitle">Add Address</p>
+                </div>
+                <form class="info__form" action="#" method="GET">
+                    <div class="info__wrapper-input">
+                        <div class="info__block-input">
+                            <label class="info__label" for="first-name">
+                                First Name*</label>
+                            <input tabindex="1" required id="first-name" class="info__input" type="text"
+                                   name="first-name" value=""
+                                   placeholder="First Name">
+                        </div>
+                        <div class="info__block-input">
+                            <label class="info__label" for="last-name">
+                                Last Name*</label>
+                            <input tabindex="2" required id="last-name" class="info__input" type="text" name="last-name"
+                                   value=""
+                                   placeholder="Last Name">
+                        </div>
+                        <div class="info__block-input">
+                            <label class="info__label" for="country">
+                                Country / Region*</label>
+                            <input tabindex="3" required id="country" class="info__input" type="text" name="country"
+                                   value=""
+                                   placeholder="Country / Region">
+                        </div>
+                        <div class="info__block-input">
+                            <label class="info__label" for="company-name">
+                                Company (optional)</label>
+                            <input tabindex="4" id="company-name" class="info__input" type="text" name="company-name"
+                                   value=""
+                                   placeholder="Company (optional)">
+                        </div>
+                        <div class="info__block-input">
+                            <label class="info__label" for="street-address">
+                                Street Address*</label>
+                            <input required tabindex="5" id="street-address" class="info__input" type="text"
+                                   name="street-address" value=""
+                                   placeholder="House number and street name">
+                        </div>
+                        <div class="info__block-input">
+                            <label class="info__label" for="apt-suite-unit">
+                                Apt, suite, unit</label>
+                            <input tabindex="6" id="apt-suite-unit" class="info__input" type="text"
+                                   name="apt-suite-unit" value=""
+                                   placeholder="apartment, suite, unit, etc. (optional)">
+                        </div>
+                        <div class="info__block-input">
+                            <label class="info__label" for="city">
+                                City*</label>
+                            <input required tabindex="7" id="city" class="info__input" type="text" name="city" value=""
+                                   placeholder="Town / City">
+                        </div>
+                        <div class="info__block-input">
+                            <label class="info__label" for="state">
+                                State*</label>
+                            <select required tabindex="8" id="state" class="info__select info__select--gray"
+                                    name="state">
+                                <option selected value="01" class="info__option">State</option>
+                            </select>
+                        </div>
+                        <div class="info__block-input info__block-input--width">
+                            <label class="info__label info__label--textarea">
+                                Delivery Instruction
+                                <textarea placeholder="Delivery Instruction" class="info__textarea"
+                                          tabindex="9"></textarea>
+                            </label>
+                        </div>
+                        <div class="info__block-input info__block-input--width checkbox">
+                            <div class="checkbox__wrapper">
+                                <input id="checkbox-one" required tabindex="10" class="checkbox__input" type="checkbox"
+                                       name="checkbox" value="">
+                                <label class="checkbox__label" for="checkbox-one">Set as default shipping
+                                    address</label>
+                            </div>
+                            <div>
+                                <input id="checkbox-two" required tabindex="10" class="checkbox__input" type="checkbox"
+                                       name="checkbox" value="">
+                                <label class="checkbox__label" for="checkbox-two">
+                                    Set as default billing address
+                                </label>
+                            </div>
+                        </div>
+                        <div class="info__block-input form-blank__group-button">
+                            <button class="form-blank__button" type="submit">Save</button>
+                            <button class="form-blank__button form-blank__button--gray" type="reset">Reset</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="form-blank__check check">
+                <div class="check__block-title">
+                    <h2 class="check__title">Check Out</h2>
+                    <p class="check__subtitle">Billing Details</p>
+                </div>
+                <form action="#" method="GET" class="check__form">
+                    <div class="check__wrapper-input">
+                        <div class="check__block-input">
+                            <label class="check__label" for="first-name-check">
+                                First Name*</label>
+                            <input tabindex="10" required id="first-name-check" class="check__input" type="text"
+                                   name="first-name" value=""
+                                   placeholder="First Name">
+                        </div>
+                        <div class="check__block-input">
+                            <label class="check__label" for="last-name-check">
+                                Last Name*</label>
+                            <input tabindex="11" required id="last-name-check" class="check__input" type="text"
+                                   name="last-name"
+                                   value=""
+                                   placeholder="Last Name">
+                        </div>
+                        <div class="check__block-input">
+                            <label class="check__label" for="country-check">
+                                Country / Region*</label>
+                            <input tabindex="12" required id="country-check" class="check__input" type="text"
+                                   name="country"
+                                   value=""
+                                   placeholder="Country / Region">
+                        </div>
+                        <div class="check__block-input">
+                            <label class="check__label" for="company-name-check">
+                                Company (optional)</label>
+                            <input tabindex="13" id="company-name-check" class="check__input" type="text"
+                                   name="company-name"
+                                   value=""
+                                   placeholder="Company (optional)">
+                        </div>
+                        <div class="check__block-input">
+                            <label class="check__label" for="street-address-check">
+                                Street Address*</label>
+                            <input required tabindex="14" id="street-address-check" class="check__input" type="text"
+                                   name="street-address" value=""
+                                   placeholder="House number and street name">
+                        </div>
+                        <div class="check__block-input">
+                            <label class="check__label" for="apt-suite-unit-check">
+                                Apt, suite, unit</label>
+                            <input tabindex="15" id="apt-suite-unit-check" class="check__input" type="text"
+                                   name="apt-suite-unit" value=""
+                                   placeholder="apartment, suite, unit, etc. (optional)">
+                        </div>
+                        <div class="check__block-input check__block-input--three">
+                            <label class="check__label" for="city-check">
+                                City*</label>
+                            <input required tabindex="16" id="city-check" class="check__input" type="text" name="city"
+                                   value=""
+                                   placeholder="Town / City">
+                        </div>
+                        <div class="check__block-input check__block-input--three">
+                            <label class="check__label" for="state-check">
+                                State*</label>
+                            <select required tabindex="17" id="state-check" class="check__select check__select--gray"
+                                    name="state">
+                                <option selected value="01" class="check__option">State</option>
+                            </select>
+                        </div>
+                        <div class="check__block-input check__block-input--three">
+                            <label class="check__label" for="postal-code-check">
+                                Postal Code*</label>
+                            <input required tabindex="18" id="postal-code-check" class="check__input" type="text"
+                                   name="city"
+                                   value=""
+                                   placeholder="Postal Code">
+                        </div>
+                        <div class="check__block-input">
+                            <label class="check__label" for="phone-check">
+                                Phone*</label>
+                            <input required tabindex="18" id="phone-check" class="check__input check__input--width"
+                                   type="tel" name="phone"
+                                   value=""
+                                   placeholder="Phone">
+                        </div>
+                        <div class="check__block-input check__block-input--width form-blank">
+                            <button tabindex="19" class="form-blank__button form-blank__button--padding" type="submit">
+                                Continue to delivery
+                            </button>
+                        </div>
+                        <div class="info__block-input info__block-input--width checkbox">
+                            <div class="checkbox__wrapper">
+                                <input id="checkbox-check" required tabindex="20" class="checkbox__input"
+                                       type="checkbox"
+                                       name="checkbox" value="">
+                                <label class="checkbox__label" for="checkbox-check">Save my information for a faster
+                                    checkout</label>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="check__shipping shipping">
+                    <h3 class="shipping__title">Shipping Address</h3>
+                    <p class="shipping__subtitle">Select the address that matches your card or payment method.</p>
+                    <form class="shipping__form" action="#">
+                        <div class="shipping__wrapper-radio shipping__wrapper-radio--after">
+                            <input id="radio" tabindex="22" checked class="shipping__radio" type="radio"
+                                   name="shipping"
+                                   value="Same as Billing address">
+                            <label for="radio" class="shipping__name-radio">Same as Billing address</label>
+                        </div>
+                        <div class="shipping__wrapper-radio shipping__wrapper-radio--padding">
+                            <input id="radio-two" tabindex="23" class="shipping__radio" type="radio" name="shipping"
+                                   value="Use a different shipping address">
+                            <label for="radio-two" class="shipping__name-radio">Use a different shipping
+                                address</label>
+                        </div>
+                    </form>
+                </div>
+                <div class="check__shipping shipping">
+                    <h3 class="shipping__title">Shipping Method</h3>
+                    <div class="shipping__card-method">
+                        <div class="shipping__card-wrapper shipping__card-wrapper--after">
+                            <h3 class="shipping__title-card">Arrives by Monday, June 7</h3>
+                        </div>
+                        <div class="shipping__card-wrapper shipping__card-wrapper--padding">
+                            <div class="shipping__header-card">
+                                <h3 class="shipping__title-card">Delivery Charges</h3>
+                                <h3 class="shipping__title-card">$5.00</h3>
+                            </div>
+                            <div class="shipping__footer-card">
+                                <p>Additional fess may apply</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="check__shipping shipping shipping--pb0">
+                    <h3 class="shipping__title">Payment Method</h3>
+                    <p class="shipping__subtitle">All transactions are secure and encrypted.</p>
+                    <form class="shipping__card-form" action="#" method="POST">
+                        <div class="shipping__form shipping__form--mb50">
+                            <div class="shipping__wrapper-radio shipping__wrapper-radio--after">
+                                <input id="radio-four" tabindex="24" checked class="shipping__radio" type="radio"
+                                       name="shipping"
+                                       value="Same as Billing address">
+                                <label for="radio-four" class="shipping__name-radio">Credit Card</label>
+                                <p class="shipping__span-label shipping__span-label--mb30">We accept all major credit
+                                    cards.</p>
+                                <div class="shipping__payment">
+                                    <div class="shipping__choice">
+                                        <a href="#" class="shipping__link">
+                                            <img src="img/info/pay.svg" alt="pay">
+                                        </a>
+                                        <a href="#" class="shipping__link">
+                                            <img src="img/info/visa.svg" alt="visa">
+                                        </a>
+                                        <a href="#" class="shipping__link">
+                                            <img src="img/info/paypal.svg" alt="paypal">
+                                        </a>
+                                        <a href="#" class="shipping__link">
+                                            <img src="img/info/paypass.svg" alt="paypass">
+                                        </a>
+                                    </div>
+                                    <div class="shipping__wrapper-input">
+                                        <div class="shipping__item">
+                                            <label class="shipping__label" for="card-number"></label>
+                                            <input required tabindex="26" id="card-number" class="shipping__input"
+                                                   type="number"
+                                                   name="card-number" value=""
+                                                   placeholder="Card Number">
+                                        </div>
+                                        <div class="shipping__item">
+                                            <label class="shipping__label" for="name-of-card"></label>
+                                            <input required tabindex="27" id="name-of-card" class="shipping__input"
+                                                   type="text"
+                                                   name="name-of-number" value=""
+                                                   placeholder="Name of card">
+                                        </div>
+                                        <div class="shipping__item">
+                                            <label class="shipping__label" for="expiration-date"></label>
+                                            <input required tabindex="28" id="expiration-date" class="shipping__input"
+                                                   type="number" maxlength="4"
+                                                   name="expiration-date" value=""
+                                                   placeholder="Expiration date (MM/YY)">
+                                        </div>
+                                        <div class="shipping__item">
+                                            <label class="shipping__label" for="security-code"></label>
+                                            <input required tabindex="29" id="security-code" class="shipping__input"
+                                                   type="text" maxlength="3"
+                                                   name="security-code" value=""
+                                                   placeholder="Security Code">
+                                            <button class="shipping__button">
+                                                <img src="img/info/eye.svg" alt="eye">
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="shipping__wrapper-radio shipping__wrapper-radio--center shipping__wrapper-radio--after">
+                                <input id="radio-five" tabindex="25" class="shipping__radio" type="radio"
+                                       name="shipping"
+                                       value="Same as Billing address">
+                                <label for="radio-five" class="shipping__name-radio">Cash on delivery</label>
+                                <p class="shipping__span-label">Pay with cash upon delivery.</p>
+                            </div>
+                            <div class="shipping__wrapper-radio shipping__card-wrapper--padding">
+                                <input id="radio-six" tabindex="26" class="shipping__radio" type="radio"
+                                       name="shipping"
+                                       value="Same as Billing address">
+                                <label for="radio-six" class="shipping__name-radio">Paypol</label>
+                            </div>
+                            <div class="info__block-input form-blank">
+                            </div>
+                        </div>
+                        <button class="form-blank__button form-blank__button--padding" type="submit">Pay Now
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="main__container contact">
+            <h4 class="contact__title">Contact Us</h4>
+            <h2 class="contact__subtitle">Request A Call Back !</h2>
+            <form class="contact__form" action="#" method="GET">
+                <div class="contact__wrapper-item">
+                    <div class="contact__item">
+                        <label for="your-name"></label>
+                        <input id="your-name" tabindex="27" class="contact__input" type="text" name="name" value=""
+                               placeholder="Your Name">
+                    </div>
+                    <div class="contact__item">
+                        <label for="email-address"></label>
+                        <input id="email-address" tabindex="28" class="contact__input" type="email" name="email" value=""
+                               placeholder="Email Address">
+                    </div>
+                    <div class="contact__item">
+                        <label for="phone-number"></label>
+                        <input id="phone-number" tabindex="29" class="contact__input" type="tel" name="number" value=""
+                               placeholder="Phone Number">
+                    </div>
+                    <div class="contact__item">
+                        <label for="subject"></label>
+                        <input id="subject" tabindex="30" class="contact__input" type="text" name="subject" value=""
+                               placeholder="Subject">
+                    </div>
+                    <div class="contact__item contact__item--textarea">
+                        <label for="textarea"></label>
+                        <textarea id="textarea" tabindex="31" class="contact__textarea" name="message"
+                               placeholder="Message..."></textarea>
+                    </div>
+                </div>
+                <button class="contact__button" type="submit">Submit</button>
+            </form>
+        </div>
+    </main>
+    <footer class="footer">
+        <h4 class="footer__title">Copyright © 2023 Euphoria Folks Pvt Ltd. All rights reserved.</h4>
+    </footer>
+</div>
+</body>
+</html>
