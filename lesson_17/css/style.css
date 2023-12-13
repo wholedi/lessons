@@ -474,7 +474,6 @@
 
 .choose__content-card {
     display: flex;
-    justify-content: space-between;
     align-items: center;
     gap: 12px;
     padding: 27px 30px;
