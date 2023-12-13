@@ -380,7 +380,7 @@
     color: #FFB342;
 }
 
-.choose__item-footer--inter {
+.choose__link-item {
     font-family: "Inter", sans-serif;
     font-size: 18px;
     color: #40DDB6;
@@ -390,7 +390,8 @@
     cursor: pointer;
 }
 
-.choose__item-footer--inter:hover {
+
+.choose__link-item:hover {
     color: #FFB342;
 }
 
@@ -536,7 +537,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        gap:30px;
+        gap: 30px;
     }
 
     .choose__bg-img {
