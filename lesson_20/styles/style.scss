@@ -63,7 +63,7 @@ $secondBackgroundColor: #0E333D;
     z-index: 10;
 
     @media (max-width: 1165px) {
-      font-size: 26px;
+      font-size: 23px;
     }
   }
 
@@ -151,9 +151,10 @@ $secondBackgroundColor: #0E333D;
         }
       }
     }
-
-    &.menu__link {
-      font-size: 18px;
+    @media (max-width: 1165px) {
+      .menu__link {
+        font-size: 18px;
+      }
     }
 
     @media (max-width: 990px) {
@@ -165,10 +166,12 @@ $secondBackgroundColor: #0E333D;
     }
   }
 
-  &__item--active {
-    &.menu__link {
-      text-decoration: solid underline $mainBackgroundColor;
-      font-weight: 700;
+  &__item {
+    &--active {
+      &.menu__link {
+        text-decoration: solid underline $mainBackgroundColor;
+        font-weight: 700;
+      }
     }
   }
 
@@ -226,7 +229,7 @@ $secondBackgroundColor: #0E333D;
   }
 
   @media (max-width: 990px) {
-    &.menu__body {
+   .menu__body {
       &::before {
         left: 0;
       }

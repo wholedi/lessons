@@ -52,7 +52,7 @@
 }
 @media (max-width: 1165px) {
   .header__logo {
-    font-size: 26px;
+    font-size: 23px;
   }
 }
 .header__button {
@@ -133,8 +133,10 @@
     text-decoration-line: underline;
   }
 }
-.menu__item.menu__link {
-  font-size: 18px;
+@media (max-width: 1165px) {
+  .menu__item .menu__link {
+    font-size: 18px;
+  }
 }
 @media (max-width: 990px) {
   .menu__item {
@@ -188,7 +190,7 @@
   overflow: hidden;
 }
 @media (max-width: 990px) {
-  .menu-open.menu__body::before {
+  .menu-open .menu__body::before {
     left: 0;
   }
   .menu-open.icon-menu span {
