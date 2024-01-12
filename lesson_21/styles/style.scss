@@ -1,0 +1,349 @@
+@import "reset.css";
+@import "fonts.css";
+
+.wrapper {
+  min-height: 100%;
+  overflow: clip;
+
+  display: flex;
+  flex-direction: column;
+
+  > main {
+    flex-grow: 1;
+  }
+}
+
+[class*="__container"] {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+[class*="__small-container"] {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+//color
+
+$borderColor: #BEBCBD;
+$headerColor: #807D7E;
+$colorActive: #3C4242;
+$boxShadow: rgba(0, 0, 0, 0.40);
+$colorBlack: #000;
+$cardYellow: #fdba45;
+$cardPink: #dbafac;
+$cardBlue: #5dcde5;
+$cardPurple: #76598e;
+$decor: #8A33FD;
+
+$hoverBody: rgba(255, 255, 255, 0.9);
+$hoverBgColor: rgba(222, 222, 222, 0.87);
+$hoverLink: rgba(44, 44, 44, 0.6);
+$hoverButton: rgba(0, 0, 0, 0.27);
+
+$mainBgColor: #ffff;
+$secondBgColor: #F6F6F6;
+$footerBgColor: #37393F;
+
+//header
+.header {
+  color: $headerColor;
+  font-family: "Causten", sans-serif;
+  font-size: 22px;
+  font-weight: 500;
+  padding-top: 3px;
+  border-bottom: 1px solid $borderColor;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 50;
+  background-color: $mainBgColor;
+
+  &__container {
+    display: flex;
+    min-height: 105px;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    @media (max-width: 990px) {
+      min-height: 70px;
+    }
+
+    @media (max-width: 678px) {
+      gap: 5px;
+    }
+  }
+
+  &__logo {
+    position: relative;
+    z-index: 5;
+  }
+
+  @media (max-width: 1200px) {
+    font-size: 20px;
+  }
+}
+
+.menu {
+  &__list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 40px;
+    flex-wrap: wrap;
+    row-gap: 10px;
+
+    @media (max-width: 1200px) {
+      column-gap: 15px;
+    }
+
+    @media (max-width: 990px) {
+      flex-direction: column;
+      align-items: flex-end;
+      row-gap: 25px;
+    }
+  }
+
+  &__item {
+    &--active {
+      color: #3C4242;
+      font-weight: 700;
+    }
+  }
+
+  &__link {
+    &::after {
+      content: "";
+      position: relative;
+      display: block;
+      bottom: 0;
+      left: 50%;
+      width: 0;
+      height: 2px;
+      background-color: #3C4242;
+      transition: all 0.5s;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        &::after {
+          width: 100%;
+          left: 0;
+        }
+      }
+    }
+
+    @media (max-width: 990px) {
+      font-size: 30px;
+    }
+  }
+
+  &__body {
+    @media (max-width: 990px) {
+      position: fixed;
+      top: 0;
+      left: 100%;
+      overflow: auto;
+      width: 100%;
+      height: 100%;
+      padding: 80px 15px 30px 15px;
+      background-color: $hoverBody;
+      transition: left 0.3s;
+    }
+
+    &::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 100%;
+      width: 100%;
+      height: 50px;
+      background-color: #fff;
+      z-index: 2;
+      transition: left 0.3s;
+    }
+
+    @media (max-width: 678px) {
+      padding: 140px 15px 30px 15px;
+    }
+  }
+}
+
+.menu-open {
+  body {
+    overflow: hidden;
+  }
+
+  @media (max-width: 990px) {
+    .menu__body {
+      left: 0;
+
+      &::before {
+        left: 0;
+      }
+    }
+
+    .icon-menu {
+      span {
+        transform: scale(0);
+      }
+
+      &::before {
+        transform: rotate(-45deg);
+        top: 50%;
+        margin-top: -1px;
+      }
+
+      &::after {
+        transform: rotate(45deg);
+        bottom: 50%;
+        margin-bottom: -1px;
+      }
+    }
+  }
+
+  @media (max-width: 678px) {
+    .search {
+      left: 0;
+    }
+  }
+}
+
+.search {
+  flex: 0 1 267px;
+  position: relative;
+
+  &__input {
+    padding: 12px 20px 12px 44px;
+    background-color: #F6F6F6;
+    border-radius: 8px;
+    transition: background-color 0.3s;
+
+    ::placeholder {
+      font-family: "Causten", sans-serif;
+      font-size: 16px;
+      color: #807D7E;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $hoverBgColor;
+      }
+    }
+
+    @media (max-width: 678px) {
+      width: 100%;
+    }
+  }
+
+  @media (max-width: 678px) {
+    position: fixed;
+    flex-basis: 100%;
+    width: 100%;
+    height: 44px;
+    top: 75px;
+    left: 100%;
+    padding: 0 20px;
+    transition: all 0.3s;
+  }
+
+  &__icon {
+    position: absolute;
+    top: 50%;
+    left: 22px;
+    transform: translate(-50%, -50%);
+
+    @media (max-width: 678px) {
+      left: 45px;
+    }
+  }
+}
+
+.action {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+
+  &__link {
+    padding: 12px;
+    width: 44px;
+    flex: 0 0 44px;
+    border-radius: 8px;
+    background-color: #F6F6F6;
+    transition: background-color 0.3s;
+
+    img {
+      max-width: 100%;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $hoverBgColor;
+      }
+    }
+  }
+}
+
+.icon-menu {
+  display: none;
+
+  @media (max-width: 990px) {
+    display: block;
+    flex: 0 0 30px;
+    width: 30px;
+    height: 18px;
+    position: relative;
+    z-index: 5;
+
+    &::before,
+    &::after,
+    span {
+      content: "";
+      height: 2px;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      background-color: $headerColor;
+      transition: transform 0.3s;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    span {
+      top: 50%;
+      margin-top: -1px;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+  }
+}
+
+//main
+.main {
+  padding-top: 109px;
+}
+
+//hero
+.hero {
+  position: relative;
+  min-height: calc(100vh - 109px);
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    object-fit: cover;
+    object-position: 70% 0;
+  }
+}
