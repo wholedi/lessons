@@ -19,12 +19,6 @@
   padding: 0 15px;
 }
 
-[class*="__small-container"] {
-  max-width: 1180px;
-  margin: 0 auto;
-  padding: 0 15px;
-}
-
 //color
 
 $borderColor: #BEBCBD;
@@ -35,6 +29,7 @@ $colorBlack: #000;
 $cardYellow: #fdba45;
 $cardPink: #dbafac;
 $cardBlue: #5dcde5;
+$cardHero: #01b5da;
 $cardPurple: #76598e;
 $decor: #8A33FD;
 
@@ -110,7 +105,7 @@ $footerBgColor: #37393F;
 
   &__item {
     &--active {
-      color: #3C4242;
+      color: $colorActive;
       font-weight: 700;
     }
   }
@@ -124,7 +119,7 @@ $footerBgColor: #37393F;
       left: 50%;
       width: 0;
       height: 2px;
-      background-color: #3C4242;
+      background-color: $colorActive;
       transition: all 0.5s;
     }
 
@@ -162,7 +157,7 @@ $footerBgColor: #37393F;
       left: 100%;
       width: 100%;
       height: 50px;
-      background-color: #fff;
+      background-color: $mainBgColor;
       z-index: 2;
       transition: left 0.3s;
     }
@@ -219,14 +214,14 @@ $footerBgColor: #37393F;
 
   &__input {
     padding: 12px 20px 12px 44px;
-    background-color: #F6F6F6;
+    background-color: $secondBgColor;
     border-radius: 8px;
     transition: background-color 0.3s;
 
     ::placeholder {
       font-family: "Causten", sans-serif;
       font-size: 16px;
-      color: #807D7E;
+      color: $headerColor;
     }
 
     @media (any-hover: hover) {
@@ -275,7 +270,7 @@ $footerBgColor: #37393F;
     width: 44px;
     flex: 0 0 44px;
     border-radius: 8px;
-    background-color: #F6F6F6;
+    background-color: $secondBgColor;
     transition: background-color 0.3s;
 
     img {
@@ -286,6 +281,12 @@ $footerBgColor: #37393F;
       &:hover {
         background-color: $hoverBgColor;
       }
+    }
+
+    @media (max-width: 500px) {
+      padding: 8px;
+      width: 35px;
+      flex: 0 0 35px;
     }
   }
 }
@@ -331,19 +332,572 @@ $footerBgColor: #37393F;
 //main
 .main {
   padding-top: 109px;
+
+  @media (max-width: 990px) {
+    padding-top: 70px;
+  }
 }
 
 //hero
 .hero {
   position: relative;
   min-height: calc(100vh - 109px);
+  background-color: $cardHero;
+  font-family: "Core Sans C", sans-serif;
+  color: $mainBgColor;
+  margin-bottom: 130px;
 
-  &__img {
+  @media (max-width: 990px) {
+    margin-bottom: 75px;
+  }
+
+  &::after {
+    @media (max-width: 990px) {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      width: 100%;
+      height: 100%;
+      background-color: $boxShadow;
+    }
+  }
+
+  &__bg {
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      z-index: 1;
+
+      @media (max-width: 990px) {
+        object-position: 70% 0;
+      }
+    }
+  }
+
+  &__content {
+    position: relative;
+    width: 100%;
+    z-index: 5;
+    padding: 129px 0 132px;
+    max-width: 439px;
+    margin-left: 100px;
+
+    > *:not(:last-child) {
+      margin-bottom: 40px;
+    }
+
+    @media (max-width: 600px) {
+      max-width: 100%;
+      padding: 80px 0;
+      text-align: center;
+      margin-left: 0;
+    }
+  }
+
+  &__subtitle {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: 0.157px;
+    text-transform: capitalize;
+  }
+
+  &__title {
+    font-size: 78px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: 0.315px;
+
+    @media (max-width: 600px) {
+      font-size: 60px;
+    }
+  }
+
+  &__info {
+    font-size: 32px;
+    font-weight: 500;
+    line-height: 1.4;
+    letter-spacing: 0.315px;
+  }
+
+  &__link {
+    font-family: "Causten", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    border-radius: 8px;
+    padding: 16px 72px;
+    color: $colorActive;
+    background-color: $mainBgColor;
+    transition: background-color 0.3s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $hoverBgColor;
+      }
+    }
+  }
+
+  &__block-button {
+    @media (max-width: 990px) {
+      display: none;
+    }
+  }
+
+  &__button {
+    position: absolute;
+    z-index: 5;
+    transform: translateX(-50%);
+
+    &--left {
+      left: 44px;
+      top: 50%;
+    }
+
+    &--right {
+      right: 44px;
+      top: 50%;
+    }
+
+    &--carousel {
+      left: 50%;
+      bottom: 44px;
+    }
+  }
+}
+
+//discount
+.discount {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  justify-content: center;
+  margin-bottom: 100px;
+
+  @media (max-width: 800px) {
+    grid-template-columns: 1fr;
+    margin-bottom: 50px;
+  }
+
+  @media (max-width: 545px) {
+    margin-bottom: 50px;
+  }
+
+  &__card {
+    font-family: "Core Sans C", sans-serif;
+    font-weight: 800;
+    box-shadow: 2px 2px 10px 0 $boxShadow;
+    border-radius: 12px;
+    padding: 66px 28px;
+    color: $mainBgColor;
+    position: relative;
+
+    &--yellow {
+      background: $cardYellow url("../img/product/bg-yellow.jpg") top/cover no-repeat;
+    }
+
+    &--purple {
+      background: $cardPurple url("../img/product/bg-purple.webp") top/cover no-repeat;
+    }
+
+    &::after {
+      @media (max-width: 990px) {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        background-color: $boxShadow;
+      }
+    }
+
+    @media (max-width: 990px) {
+      padding: 20px;
+    }
+
+    @media (max-width: 545px) {
+      padding: 20px 30px;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 5;
+    color: $mainBgColor;
+  }
+
+  &__subtitle {
+    font-family: "Montserrat", sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    letter-spacing: 0.251px;
+    margin-bottom: 24px;
+  }
+
+  &__title {
+    max-width: 264px;
+    font-size: 34px;
+    line-height: 1.3;
+    margin-bottom: 9px;
+
+    @media (max-width: 990px) {
+      max-width: 195px;
+    }
+
+    @media (max-width: 545px) {
+      font-size: 20px;
+    }
+  }
+
+  &__intro {
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    letter-spacing: 0.251px;
+    margin-bottom: 42px;
+  }
+
+  &__link {
+    font-size: 20px;
+    line-height: 1.5;
+    text-decoration-line: underline;
+    transition: color 0.3s;
+
+    &--purple {
+      @media (any-hover: hover) {
+        &:hover {
+          color: $cardPurple;
+        }
+      }
+    }
+
+    &--yellow {
+      @media (any-hover: hover) {
+        &:hover {
+          color: $cardYellow;
+        }
+      }
+    }
+  }
+}
+
+//arrival
+.arrival {
+  color: $colorActive;
+  margin-bottom: 95px;
+
+  &__body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 23px;
+  }
+
+  @media (max-width: 545px) {
+    margin-bottom: 50px;
+  }
+
+  &__button {
+    @media (max-width: 545px) {
+      display: none;
+    }
+  }
+
+}
+
+.block {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 38px;
+
+  @media (max-width: 990px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 545px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.title {
+  font-family: "Core Sans C", sans-serif;
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0.68px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  color: $colorActive;
+
+  &::before {
+    content: "";
+    flex: 0 0 6px;
+    height: 30px;
+    width: 6px;
+    border-radius: 10px;
+    background: $decor;
+  }
+
+  &--mb70 {
+    margin-bottom: 70px;
+  }
+
+  @media (max-width: 545px) {
+    font-size: 30px;
+    margin-bottom: 50px;
+  }
+}
+
+.card-block {
+  img {
+    width: 100%;
+    aspect-ratio: 263/263;
+    object-fit: contain;
+    border-radius: 12px;
+    transition: transform 0.3s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        transform: scale(1.03);
+      }
+    }
+
+  }
+
+  > *:not(:last-child) {
+    margin-bottom: 32px;
+  }
+
+  &__name {
+    font-family: "Causten", sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+  }
+}
+
+//zone
+.zone {
+  margin-bottom: 100px;
+
+  @media (max-width: 545px) {
+    margin-bottom: 50px;
+  }
+}
+
+.block-zone {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 20px;
+
+  @media (max-width: 990px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: 750px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__card {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 64px 20px;
+
+    @media (max-width: 545px) {
+      padding: 30px 20px;
+    }
+
+    &--two {
+      grid-column: span 2;
+    }
+
+    &--three {
+      grid-column: span 3;
+
+      @media (max-width: 990px) {
+        grid-column: span 2;
+      }
+    }
+
+    &--bg-blue {
+      background-color: $cardBlue;
+    }
+
+    &--bg-pink {
+      background-color: $cardPink;
+    }
+
+    &--padding {
+      padding: 34px 25px 41px 25px;
+    }
+
+    &--right {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      text-align: right;
+    }
+
+    &--pr {
+      @media (max-width: 990px) {
+        text-align: right;
+        padding: 45px 20px 50px 20px;
+      }
+    }
+
+    &--all {
+      @media (max-width: 990px) {
+        grid-column: span 4;
+        padding: 40px;
+      }
+
+      @media (max-width: 750px) {
+        grid-column: span 2;
+        padding: 45px 20px 50px 20px;
+      }
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        .block-zone__decor-button {
+          svg {
+            transform: scale(1.3);
+          }
+        }
+      }
+    }
+
+    &::after {
+      @media (max-width: 990px) {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        border-radius: 12px;
+        background-color: $boxShadow;
+      }
+    }
+  }
+
+  &__img-bg {
     position: absolute;
     top: 0;
     left: 0;
-
+    width: 100%;
+    height: 100%;
+    aspect-ratio: 400/393;
     object-fit: cover;
-    object-position: 70% 0;
+    object-position: top center;
+
+    &--left {
+      @media (max-width: 990px) {
+        object-position: top left;
+      }
+    }
   }
+
+  &__content {
+    position: relative;
+    z-index: 5;
+    max-width: 174px;
+    font-family: "Causten", sans-serif;
+    font-weight: 600;
+    color: $mainBgColor;
+  }
+
+  &__title {
+    font-family: "Core Sans C", sans-serif;
+    font-size: 28px;
+    line-height: 1.3;
+    letter-spacing: 0.56px;
+    margin-bottom: 10px;
+  }
+
+  &__subtitle {
+    font-size: 14px;
+    margin-bottom: 9px;
+  }
+
+  &__label {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 31px;
+  }
+
+  &__decor-button {
+    display: inline-flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 40px;
+
+    svg {
+      max-width: 100%;
+      transition: transform 0.3s;
+    }
+  }
+
+  &__button {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 500;
+    padding: 10px 28px;
+    border-radius: 4px;
+    border: 1px solid;
+    transition: background-color 0.3s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $hoverButton;
+      }
+    }
+  }
+
+  &__link {
+    padding: 10px 16px;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 4px;
+    background-color: $colorActive;
+    margin-bottom: 28px;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $hoverLink;
+      }
+    }
+  }
+
+  &__content {
+    &--dark {
+      color: $colorActive;
+
+      @media (max-width: 990px) {
+        color: $mainBgColor;
+      }
+    }
+
+    &--pr {
+      text-align: left;
+      padding: 45px 120px 50px 20px;
+    }
+
+    &--mw {
+      max-width: 133px;
+    }
+  }
+
 }
