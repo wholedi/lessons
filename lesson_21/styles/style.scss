@@ -32,15 +32,21 @@ $cardBlue: #5dcde5;
 $cardHero: #01b5da;
 $cardPurple: #76598e;
 $decor: #8A33FD;
+$categories: #2A2F2F;
+$categoriesSubtitle: #7F7F7F;
+$colorSpan: #FBD103;
 
 $hoverBody: rgba(255, 255, 255, 0.9);
 $hoverBgColor: rgba(222, 222, 222, 0.87);
 $hoverLink: rgba(44, 44, 44, 0.6);
 $hoverButton: rgba(0, 0, 0, 0.27);
 
+
 $mainBgColor: #ffff;
 $secondBgColor: #F6F6F6;
 $footerBgColor: #37393F;
+$colorBgGreen: #0c1e12;
+
 
 //header
 .header {
@@ -333,6 +339,15 @@ $footerBgColor: #37393F;
 .main {
   padding-top: 109px;
 
+  > *:not(:last-child) {
+    margin-bottom: 100px;
+
+    @media (max-width: 545px) {
+      margin-bottom: 50px;
+    }
+
+  }
+
   @media (max-width: 990px) {
     padding-top: 70px;
   }
@@ -345,11 +360,6 @@ $footerBgColor: #37393F;
   background-color: $cardHero;
   font-family: "Core Sans C", sans-serif;
   color: $mainBgColor;
-  margin-bottom: 130px;
-
-  @media (max-width: 990px) {
-    margin-bottom: 75px;
-  }
 
   &::after {
     @media (max-width: 990px) {
@@ -478,15 +488,9 @@ $footerBgColor: #37393F;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   justify-content: center;
-  margin-bottom: 100px;
 
   @media (max-width: 800px) {
     grid-template-columns: 1fr;
-    margin-bottom: 50px;
-  }
-
-  @media (max-width: 545px) {
-    margin-bottom: 50px;
   }
 
   &__card {
@@ -593,17 +597,12 @@ $footerBgColor: #37393F;
 //arrival
 .arrival {
   color: $colorActive;
-  margin-bottom: 95px;
 
   &__body {
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 23px;
-  }
-
-  @media (max-width: 545px) {
-    margin-bottom: 50px;
   }
 
   &__button {
@@ -687,14 +686,6 @@ $footerBgColor: #37393F;
 }
 
 //zone
-.zone {
-  margin-bottom: 100px;
-
-  @media (max-width: 545px) {
-    margin-bottom: 50px;
-  }
-}
-
 .block-zone {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
@@ -899,5 +890,249 @@ $footerBgColor: #37393F;
       max-width: 133px;
     }
   }
-
 }
+
+//fashion
+.fashion {
+
+  &__container {
+    display: flex;
+    color: $mainBgColor;
+
+    @media (max-width: 990px) {
+      flex-direction: column;
+    }
+  }
+
+  &__header {
+    position: relative;
+    font-family: "Causten", sans-serif;
+    flex: 0 1 50%;
+    background-color: $colorBgGreen;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+
+    @media (max-width: 990px) {
+      border-radius: 10px;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      aspect-ratio: 614/640;
+      object-fit: cover;
+      border-top-left-radius: 10px;
+      border-bottom-left-radius: 10px;
+
+      @media (max-width: 990px) {
+        border-radius: 10px;
+      }
+    }
+  }
+
+  &__content {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 466px;
+
+    @media (max-width: 545px) {
+      text-align: center;
+      min-width: 250px;
+    }
+  }
+
+  &__title {
+    font-family: "Core Sans C", sans-serif;
+    font-size: 34px;
+    font-weight: 800;
+    line-height: 1.4;
+    letter-spacing: 0.208px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+
+    @media (max-width: 500px) {
+      margin-bottom: 15px;
+      font-size: 20px;
+    }
+
+  }
+
+  &__text {
+    font-size: 20px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+
+    > *:not(:last-child) {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 500px) {
+      margin-bottom: 25px;
+      font-size: 18px;
+    }
+  }
+
+  &__link {
+    color: $colorActive;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: $mainBgColor;
+    padding: 12px 44px;
+    border-radius: 8px;
+  }
+
+  &__footer {
+    flex: 0 1 50%;
+
+    img {
+      height: 100%;
+      width: 100%;
+      aspect-ratio: 614/640;
+      object-fit: cover;
+      border-top-right-radius: 10px;
+      border-bottom-right-radius: 10px;
+
+      @media (max-width: 990px) {
+        display: none;
+      }
+    }
+  }
+}
+
+//categories
+.categories {
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 50px;
+    justify-items: center;
+    align-items: center;
+
+    &--gap36 {
+      gap:36px;
+    }
+
+    @media (max-width: 990px) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    @media (max-width: 760px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media (max-width: 545px) {
+      grid-template-columns: 1fr;
+    }
+
+  }
+
+  &__img {
+    margin-bottom: 15px;
+    transition: transform 0.3s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        transform: scale(1.03);
+      }
+    }
+
+    img {
+      width: 100%;
+      aspect-ratio: 270/393;
+      object-fit: contain;
+      border-radius: 10px;
+    }
+  }
+}
+
+.info {
+  font-family: "Causten", sans-serif;
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 270px;
+
+  &__content {
+    > *:not(:last-child) {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__title {
+    color: $categories;
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: -0.715px;
+  }
+
+  &__subtitle {
+    color: $categoriesSubtitle;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: -0.536px;
+  }
+}
+
+//brands
+.brands {
+  color: $mainBgColor;
+
+  &__body {
+    padding: 43px 20px 60px;
+    background-color: $colorActive;
+    width: 100%;
+    border-radius: 12px;
+    text-align: center;
+  }
+
+  &__title {
+    font-family: "Core Sans C", sans-serif;
+    font-size: 50px;
+    font-weight: 800;
+    margin-bottom: 26px;
+  }
+
+  &__subtitle {
+    font-family: "Causten", sans-serif;
+    font-size: 22px;
+    margin-bottom: 67px;
+
+    span {
+      color: #FBD103;
+      font-weight: 700;
+    }
+  }
+
+  &__block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 24px;
+  }
+
+  &__card {
+    transition: transform 0.3s;
+
+    img {
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 178/85;
+      object-fit: cover;
+      border-radius: 12px;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        transform: scale(1.03);
+      }
+    }
+  }
+}
+

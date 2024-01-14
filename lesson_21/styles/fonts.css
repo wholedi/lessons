@@ -3,6 +3,16 @@
 @font-face {
     font-family: "Causten";
     src:
+            url("../fonts/causten/Causten-Light.woff2") format("woff2"),
+            url("../fonts/causten/Causten-Light.woff") format("woff");
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Causten";
+    src:
             url("../fonts/causten/Causten-Regular.woff2") format("woff2"),
             url("../fonts/causten/Causten-Regular.woff") format("woff");
     font-weight: normal;
