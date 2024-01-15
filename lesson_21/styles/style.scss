@@ -496,13 +496,15 @@ $colorBgGreen: #0c1e12;
 
 //discount
 .discount {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 30px;
-  justify-content: center;
+  &__container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    justify-content: center;
 
-  @media (max-width: 800px) {
-    grid-template-columns: 1fr;
+    @media (max-width: 800px) {
+      grid-template-columns: 1fr;
+    }
   }
 
   &__card {
@@ -1276,7 +1278,7 @@ $colorBgGreen: #0c1e12;
   &__label {
     font-size: 18px;
     font-weight: 700;
-    color:$mainBgColor;
+    color: $mainBgColor;
     text-align: center;
   }
 

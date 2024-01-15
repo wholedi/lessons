@@ -414,14 +414,14 @@
   bottom: 44px;
 }
 
-.discount {
+.discount__container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 30px;
   justify-content: center;
 }
 @media (max-width: 800px) {
-  .discount {
+  .discount__container {
     grid-template-columns: 1fr;
   }
 }
