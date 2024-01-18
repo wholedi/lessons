@@ -1,0 +1,132 @@
+@use "sass:math";
+@import "reset.css";
+@import "fonts.css";
+
+.wrapper {
+  min-height: 100%;
+  overflow: clip;
+
+  display: flex;
+  flex-direction: column;
+
+  > main {
+    flex-grow: 1;
+  }
+}
+
+[class*="__container"] {
+  max-width: 1250px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+@function toRem($num1, $num2: 16) {
+  $rez: math.div($num1, $num2) + rem;
+  @return $rez;
+}
+
+@function toEm($num1, $num2: 16) {
+  $rez: math.div($num1, $num2) + em;
+  @return $rez;
+}
+
+//color
+$mainColor: #FFF;
+$mainColorGray: #37393F;
+
+//header
+.panel-info {
+  font-size: toRem(14);
+  background-color: $mainColorGray;
+
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: toEm(30);
+    min-height: toEm(60);
+    color: $mainColor;
+    flex-wrap: wrap;
+    padding-top: toEm(5);
+    padding-bottom: toEm(5);
+
+    @media(max-width: toRem(878)) {
+      justify-content: center;
+      gap: toEm(15);
+    }
+  }
+
+  &__address {
+    display: flex;
+    gap: toEm(42);
+
+    @media(max-width: toRem(878)) {
+      gap: toEm(30);
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: toEm(9);
+
+    &::before {
+      content: "";
+      width: toEm(15.53);
+      height: toEm(22.081);
+      flex: 0 0 toEm(15.53);
+      background-image: url("../img/header/address.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+
+    &--mail {
+      &::before {
+        width: toEm(20.189);
+        height: toEm(15.53);
+        flex: 0 0 toEm(20.189);
+        background-image: url("../img/header/mail.svg");
+      }
+    }
+
+    &--time {
+      &::before {
+        width: toEm(14.282);
+        height: toEm(14.282);
+        flex: 0 0 toEm(14.282);
+        background-image: url("../img/header/time.svg");
+      }
+    }
+  }
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: toEm(16);
+}
+
+.header {
+  font-family: "Inter", sans-serif;
+  background-color: $mainColor;
+  color: $mainColorGray;
+
+  &__container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: toEm(40);
+    font-size: toRem(18);
+    min-height: toEm(130);
+  }
+}
+
+.menu {
+  &__list {
+    display: flex;
+    align-items: center;
+    gap: toEm(40);
+  }
+}

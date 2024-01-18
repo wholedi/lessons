@@ -60,3 +60,7 @@ textarea {
 	-moz-appearance: none;
 	appearance: none;
 }
+
+address {
+	all: unset;
+}
