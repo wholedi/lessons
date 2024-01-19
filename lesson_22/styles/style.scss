@@ -30,9 +30,41 @@
   @return $rez;
 }
 
+//sample
+
+%header-flex {
+  display: flex;
+  align-items: center;
+  gap: toEm(40);
+}
+
+%decoration-link {
+  &::after {
+    content: "";
+    position: relative;
+    display: block;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    transition: all 0.5s;
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      &::after {
+        width: 100%;
+        left: 0;
+      }
+    }
+  }
+}
+
 //color
 $mainColor: #FFF;
 $mainColorGray: #37393F;
+$buttonBlue: #6B77E5;
+$buttonGreen: #40DDB6;
 
 //header
 .panel-info {
@@ -40,8 +72,7 @@ $mainColorGray: #37393F;
   background-color: $mainColorGray;
 
   &__container {
-    display: flex;
-    align-items: center;
+    @extend %header-flex;
     justify-content: space-between;
     gap: toEm(30);
     min-height: toEm(60);
@@ -66,10 +97,16 @@ $mainColorGray: #37393F;
   }
 
   &__link {
-    display: flex;
-    align-items: center;
+    @extend %header-flex;
     justify-content: center;
     gap: toEm(9);
+    transition: color 0.3s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $buttonGreen;
+      }
+    }
 
     &::before {
       content: "";
@@ -102,31 +139,161 @@ $mainColorGray: #37393F;
 }
 
 .social {
-  display: flex;
-  align-items: center;
+  @extend %header-flex;
   justify-content: space-between;
   gap: toEm(16);
+
+  &__link {
+    transition: transform 0.3s;
+
+    @media (any-hover: hover) {
+      &:hover {
+        transform: scale(1.09);
+      }
+    }
+
+  }
 }
 
 .header {
   font-family: "Inter", sans-serif;
   background-color: $mainColor;
   color: $mainColorGray;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 100;
 
   &__container {
-    display: flex;
+    @extend %header-flex;
     justify-content: space-between;
-    align-items: center;
-    gap: toEm(40);
     font-size: toRem(18);
     min-height: toEm(130);
+    gap: toEm(20);
+
+    @media(max-width: toRem(1160)) {
+      min-height: toEm(100);
+    }
   }
 }
 
 .menu {
+  @extend %header-flex;
+
+  @media(max-width: toRem(1160)) {
+    gap: toEm(20);
+  }
+
   &__list {
-    display: flex;
-    align-items: center;
-    gap: toEm(40);
+    @extend %header-flex;
+    flex-wrap: wrap;
+    @media(max-width: toRem(1160)) {
+      gap: toEm(25);
+    }
+  }
+
+  &__item {
+    @extend %decoration-link;
+
+    &::after {
+      background-color: $mainColorGray;
+    }
+
+    &--arrow {
+      position: relative;
+
+      @media (any-hover: hover) {
+        &:hover {
+          .menu__link {
+            &::after {
+              transform: rotate(-180deg);
+            }
+          }
+
+          .sub-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(0, 0);
+            pointer-events: all;
+          }
+        }
+      }
+
+
+      .menu__link {
+        @extend %header-flex;
+        gap: toEm(4);
+        transition: transform 0.3s;
+
+        &::after {
+          content: "";
+          flex: 0 0 toEm(8);
+          width: toEm(8);
+          height: toEm(4);
+          background: url("../img/header/icon.svg") no-repeat center center;
+          transition: transform 0.3s;
+        }
+      }
+    }
+  }
+}
+
+.menu-open {
+  body {
+    overflow: hidden;
+  }
+}
+
+.button {
+  text-align: center;
+  padding: toEm(21) toEm(35);
+  transition: background-color 0.3s;
+
+  @media(max-width: toRem(1160)) {
+    padding: toEm(15);
+  }
+
+  &--blue {
+    color: $mainColor;
+    background-color: $buttonBlue;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $buttonGreen;
+      }
+    }
+  }
+}
+
+.sub-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding-top: toEm(5);
+  transform: translate(0, 10%);
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+  pointer-events: none;
+
+  &__list {
+    padding: toEm(10);
+    width: toEm(200);
+    color: $mainColor;
+    border-radius: toEm(4);
+    background-color: $mainColorGray;
+
+    > li:not(:last-child) {
+      margin-bottom: toEm(10);
+    }
+  }
+
+  &__link {
+    @media (any-hover: hover) {
+      &:hover {
+        text-decoration: underline;
+      }
+    }
   }
 }
