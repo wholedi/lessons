@@ -30,8 +30,6 @@
   @return $rez;
 }
 
-//sample
-
 %header-flex {
   display: flex;
   align-items: center;
@@ -46,7 +44,7 @@
     bottom: 0;
     left: 50%;
     width: 0;
-    height: 2px;
+    height: toRem(2);
     transition: all 0.5s;
   }
 
@@ -65,6 +63,7 @@ $mainColor: #FFF;
 $mainColorGray: #37393F;
 $buttonBlue: #6B77E5;
 $buttonGreen: #40DDB6;
+$menuBody: rgba(55, 57, 63, 0.80);
 
 //header
 .panel-info {
@@ -74,32 +73,23 @@ $buttonGreen: #40DDB6;
   &__container {
     @extend %header-flex;
     justify-content: space-between;
-    gap: toEm(30);
+    gap: toRem(30);
     min-height: toEm(60);
     color: $mainColor;
     flex-wrap: wrap;
     padding-top: toEm(5);
     padding-bottom: toEm(5);
-
-    @media(max-width: toRem(878)) {
-      justify-content: center;
-      gap: toEm(15);
-    }
   }
 
   &__address {
     display: flex;
-    gap: toEm(42);
-
-    @media(max-width: toRem(878)) {
-      gap: toEm(30);
-    }
+    gap: toRem(42);
   }
 
   &__link {
     @extend %header-flex;
     justify-content: center;
-    gap: toEm(9);
+    gap: toRem(9);
     transition: color 0.3s;
 
     @media (any-hover: hover) {
@@ -135,6 +125,11 @@ $buttonGreen: #40DDB6;
         background-image: url("../img/header/time.svg");
       }
     }
+
+  }
+
+  @media(max-width: toRem(991)) {
+    display: none;
   }
 }
 
@@ -150,6 +145,10 @@ $buttonGreen: #40DDB6;
       &:hover {
         transform: scale(1.09);
       }
+    }
+
+    img {
+      max-width: 100%;
     }
 
   }
@@ -175,14 +174,52 @@ $buttonGreen: #40DDB6;
     @media(max-width: toRem(1160)) {
       min-height: toEm(100);
     }
+
+    @media(max-width: toRem(991)) {
+      font-size: toRem(26);
+      min-height: toEm(50);
+    }
+  }
+
+  &__logo {
+    position: relative;
+    z-index: 5;
   }
 }
 
 .menu {
   @extend %header-flex;
-
   @media(max-width: toRem(1160)) {
     gap: toEm(20);
+  }
+
+  &__body {
+    display: flex;
+    align-items: center;
+    gap: toRem(40);
+    @media (max-width: 990px) {
+      position: fixed;
+      top: 0;
+      left: 100%;
+      overflow: auto;
+      width: 100%;
+      height: 100%;
+      padding: 70px 15px 30px 15px;
+      background-color: $menuBody;
+      transition: left 0.3s;
+
+      &::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 100%;
+        width: 100%;
+        height: 60px;
+        background-color: $menuBody;
+        z-index: 2;
+        transition: left 0.3s;
+      }
+    }
   }
 
   &__list {
@@ -190,6 +227,12 @@ $buttonGreen: #40DDB6;
     flex-wrap: wrap;
     @media(max-width: toRem(1160)) {
       gap: toEm(25);
+    }
+
+    @media (max-width: 990px) {
+      flex-direction: column;
+      align-items: flex-end;
+      color: $mainColor
     }
   }
 
@@ -200,39 +243,81 @@ $buttonGreen: #40DDB6;
       background-color: $mainColorGray;
     }
 
-    &--arrow {
-      position: relative;
+    @media (max-width: 1165px) {
+      .menu__link {
+        font-size: 18px;
+      }
+    }
 
-      @media (any-hover: hover) {
-        &:hover {
-          .menu__link {
-            &::after {
-              transform: rotate(-180deg);
-            }
-          }
+    @media (max-width: 990px) {
+      color: $mainColor;
 
-          .sub-menu {
-            opacity: 1;
-            visibility: visible;
-            transform: translate(0, 0);
-            pointer-events: all;
+      .menu__link {
+        font-size: 26px;
+      }
+    }
+  }
+
+  &--arrow {
+    position: relative;
+
+    &::after {
+      content: "";
+      flex: 0 0 toRem(8);
+      width: toRem(8);
+      height: toRem(4);
+      background-image: url("../img/header/icon.svg");
+
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        .menu__link {
+          &::after {
+            transform: rotate(-180deg);
           }
+        }
+
+        .sub-menu {
+          opacity: 1;
+          visibility: visible;
+          transform: translate(0, 0);
+          pointer-events: all;
         }
       }
 
+      @media (max-width: 990px) {
+        .menu__link {
+          display: block;
 
-      .menu__link {
-        @extend %header-flex;
-        gap: toEm(4);
-        transition: transform 0.3s;
+          &::after {
+            display: none;
+          }
+        }
+      }
+    }
+  }
 
-        &::after {
-          content: "";
-          flex: 0 0 toEm(8);
-          width: toEm(8);
-          height: toEm(4);
-          background: url("../img/header/icon.svg") no-repeat center center;
-          transition: transform 0.3s;
+  .button {
+    text-align: center;
+    padding: toEm(21) toEm(35);
+    transition: background-color 0.3s;
+
+    @media(max-width: toRem(1160)) {
+      padding: toEm(15);
+    }
+
+    @media(max-width: toRem(400)) {
+      padding: toEm(10);
+    }
+
+    &--blue {
+      color: $mainColor;
+      background-color: $buttonBlue;
+
+      @media (any-hover: hover) {
+        &:hover {
+          background-color: $buttonGreen;
         }
       }
     }
@@ -243,24 +328,31 @@ $buttonGreen: #40DDB6;
   body {
     overflow: hidden;
   }
-}
 
-.button {
-  text-align: center;
-  padding: toEm(21) toEm(35);
-  transition: background-color 0.3s;
+  @media (max-width: 990px) {
+    .menu__body {
+      left: 0;
 
-  @media(max-width: toRem(1160)) {
-    padding: toEm(15);
-  }
+      &::before {
+        left: 0;
+      }
+    }
 
-  &--blue {
-    color: $mainColor;
-    background-color: $buttonBlue;
+    .icon-menu {
+      span {
+        transform: scale(0);
+      }
 
-    @media (any-hover: hover) {
-      &:hover {
-        background-color: $buttonGreen;
+      &::before {
+        transform: rotate(-45deg);
+        top: 50%;
+        margin-top: -1px;
+      }
+
+      &::after {
+        transform: rotate(45deg);
+        bottom: 50%;
+        margin-bottom: -1px;
       }
     }
   }
@@ -270,7 +362,7 @@ $buttonGreen: #40DDB6;
   position: absolute;
   top: 100%;
   left: 0;
-  padding-top: toEm(5);
+  padding-top: 10px;
   transform: translate(0, 10%);
   opacity: 0;
   visibility: hidden;
@@ -278,15 +370,23 @@ $buttonGreen: #40DDB6;
   pointer-events: none;
 
   &__list {
-    padding: toEm(10);
-    width: toEm(200);
+    padding: 10px;
+    width: 210px;
     color: $mainColor;
-    border-radius: toEm(4);
+    border-radius: 4px;
     background-color: $mainColorGray;
 
     > li:not(:last-child) {
-      margin-bottom: toEm(10);
+      margin-bottom: 10px;
     }
+  }
+
+  @media (max-width: 990px) {
+    position: relative;
+    visibility: visible;
+    opacity: 1;
+    transform: translate(0, 0);
+    color: $mainColorGray;
   }
 
   &__link {
@@ -295,5 +395,55 @@ $buttonGreen: #40DDB6;
         text-decoration: underline;
       }
     }
+    @media (max-width: 990px) {
+      font-size: 24px;
+    }
+  }
+
+  &__item {
+    @media (max-width: 990px) {
+      :not(:last-child) {
+        margin-bottom: 20px;
+      }
+    }
   }
 }
+
+.icon-menu {
+  display: none;
+
+  @media (max-width: 990px) {
+    display: block;
+    flex: 0 0 30px;
+    width: 30px;
+    height: 18px;
+    position: relative;
+    z-index: 5;
+
+    &::before,
+    &::after,
+    span {
+      content: "";
+      height: 2px;
+      width: 100%;
+      position: absolute;
+      left: 0;
+      background-color: $buttonBlue;
+      transition: transform 0.3s;
+    }
+
+    &::before {
+      top: 0;
+    }
+
+    span {
+      top: 50%;
+      margin-top: -1px;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+  }
+}
+
