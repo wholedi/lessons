@@ -64,6 +64,13 @@ $mainColorGray: #37393F;
 $buttonBlue: #6B77E5;
 $buttonGreen: #40DDB6;
 $menuBody: rgba(55, 57, 63, 0.80);
+$bgHero: rgba(55, 57, 63, 0.91);
+$colorText: #B9B9B9;
+$mainColorBody: rgba(255, 255, 255, 0.94);
+$asideColor: #F4F4F4;
+$asideText: #7D7D7D;
+$cardBorder: #E3E3E3;
+$hoverYellow: #FFB342;
 
 //header
 .panel-info {
@@ -100,9 +107,9 @@ $menuBody: rgba(55, 57, 63, 0.80);
 
     &::before {
       content: "";
-      width: toEm(15.53);
-      height: toEm(22.081);
-      flex: 0 0 toEm(15.53);
+      width: toRem(15.53);
+      height: toRem(22.081);
+      flex: 0 0 toRem(15.53);
       background-image: url("../img/header/address.svg");
       background-repeat: no-repeat;
       background-size: contain;
@@ -110,18 +117,18 @@ $menuBody: rgba(55, 57, 63, 0.80);
 
     &--mail {
       &::before {
-        width: toEm(20.189);
-        height: toEm(15.53);
-        flex: 0 0 toEm(20.189);
+        width: toRem(20.189);
+        height: toRem(15.53);
+        flex: 0 0 toRem(20.189);
         background-image: url("../img/header/mail.svg");
       }
     }
 
     &--time {
       &::before {
-        width: toEm(14.282);
-        height: toEm(14.282);
-        flex: 0 0 toEm(14.282);
+        width: toRem(14.282);
+        height: toRem(14.282);
+        flex: 0 0 toRem(14.282);
         background-image: url("../img/header/time.svg");
       }
     }
@@ -189,23 +196,26 @@ $menuBody: rgba(55, 57, 63, 0.80);
 
 .menu {
   @extend %header-flex;
-  @media(max-width: toRem(1160)) {
-    gap: toEm(20);
-  }
 
   &__body {
     display: flex;
     align-items: center;
     gap: toRem(40);
-    @media (max-width: 990px) {
+
+    @media(max-width: toRem(1160)) {
+      gap: toEm(20);
+    }
+
+    @media (max-width: toRem(991)) {
       position: fixed;
+      flex-direction: column;
       top: 0;
       left: 100%;
       overflow: auto;
       width: 100%;
       height: 100%;
-      padding: 70px 15px 30px 15px;
-      background-color: $menuBody;
+      padding: toRem(100) toRem(15) toRem(30);
+      background-color: $mainColorBody;
       transition: left 0.3s;
 
       &::before {
@@ -214,8 +224,9 @@ $menuBody: rgba(55, 57, 63, 0.80);
         top: 0;
         left: 100%;
         width: 100%;
-        height: 60px;
-        background-color: $menuBody;
+        height: toRem(80
+        );
+        background-color: $mainColor;
         z-index: 2;
         transition: left 0.3s;
       }
@@ -229,64 +240,61 @@ $menuBody: rgba(55, 57, 63, 0.80);
       gap: toEm(25);
     }
 
-    @media (max-width: 990px) {
+    @media (max-width: toRem(991)) {
       flex-direction: column;
-      align-items: flex-end;
-      color: $mainColor
     }
   }
 
   &__item {
+    position: relative;
     @extend %decoration-link;
 
     &::after {
       background-color: $mainColorGray;
     }
 
-    @media (max-width: 1165px) {
-      .menu__link {
-        font-size: 18px;
-      }
-    }
+    &--arrow {
+      position: relative;
+      display: flex;
+      align-items: center;
 
-    @media (max-width: 990px) {
-      color: $mainColor;
+      @media (any-hover: hover) {
+        &:hover {
+          .menu__link {
+            &::after {
+              transform: rotate(-180deg);
+            }
+          }
 
-      .menu__link {
-        font-size: 26px;
-      }
-    }
-  }
-
-  &--arrow {
-    position: relative;
-
-    &::after {
-      content: "";
-      flex: 0 0 toRem(8);
-      width: toRem(8);
-      height: toRem(4);
-      background-image: url("../img/header/icon.svg");
-
-    }
-
-    @media (any-hover: hover) {
-      &:hover {
-        .menu__link {
-          &::after {
-            transform: rotate(-180deg);
+          .sub-menu {
+            opacity: 1;
+            visibility: visible;
+            transform: translate(0, 0);
+            pointer-events: all;
           }
         }
+      }
 
-        .sub-menu {
-          opacity: 1;
-          visibility: visible;
-          transform: translate(0, 0);
-          pointer-events: all;
+      .menu__link {
+        display: flex;
+        align-items: center;
+        gap: toRem(4);
+
+        &::after {
+          content: "";
+          flex: 0 0 toRem(8);
+          width: toRem(8);
+          height: toRem(4);
+          background: url("../img/header/icon.svg") no-repeat center center;
+          transition: transform 0.3s;
         }
       }
 
-      @media (max-width: 990px) {
+      @media (max-width: toRem(991)) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
         .menu__link {
           display: block;
 
@@ -297,28 +305,43 @@ $menuBody: rgba(55, 57, 63, 0.80);
       }
     }
   }
+}
 
-  .button {
-    text-align: center;
-    padding: toEm(21) toEm(35);
-    transition: background-color 0.3s;
+.button {
+  text-align: center;
+  font-family: "Inter", sans-serif;
+  font-size: toRem(18);
+  font-weight: 600;
+  padding: toEm(21) toEm(35);
+  transition: background-color 0.3s;
 
-    @media(max-width: toRem(1160)) {
-      padding: toEm(15);
+  @media(max-width: toRem(1160)) {
+    padding: toEm(15);
+  }
+
+  &--blue {
+    color: $mainColor;
+    background-color: $buttonBlue;
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $buttonGreen;
+      }
     }
+  }
 
-    @media(max-width: toRem(400)) {
-      padding: toEm(10);
-    }
+  &--padding {
+    padding: toEm(21) toEm(27);
+  }
 
-    &--blue {
-      color: $mainColor;
-      background-color: $buttonBlue;
+  &--green {
+    color: $mainColorGray;
+    background-color: $buttonGreen;
 
-      @media (any-hover: hover) {
-        &:hover {
-          background-color: $buttonGreen;
-        }
+    @media (any-hover: hover) {
+      &:hover {
+        color: $mainColor;
+        background-color: $buttonBlue;
       }
     }
   }
@@ -329,7 +352,7 @@ $menuBody: rgba(55, 57, 63, 0.80);
     overflow: hidden;
   }
 
-  @media (max-width: 990px) {
+  @media (max-width: toRem(991)) {
     .menu__body {
       left: 0;
 
@@ -346,13 +369,13 @@ $menuBody: rgba(55, 57, 63, 0.80);
       &::before {
         transform: rotate(-45deg);
         top: 50%;
-        margin-top: -1px;
+        margin-top: toRem(-1);
       }
 
       &::after {
         transform: rotate(45deg);
         bottom: 50%;
-        margin-bottom: -1px;
+        margin-bottom: toRem(-1);
       }
     }
   }
@@ -362,7 +385,7 @@ $menuBody: rgba(55, 57, 63, 0.80);
   position: absolute;
   top: 100%;
   left: 0;
-  padding-top: 10px;
+  padding-top: toRem(10);
   transform: translate(0, 10%);
   opacity: 0;
   visibility: hidden;
@@ -370,19 +393,24 @@ $menuBody: rgba(55, 57, 63, 0.80);
   pointer-events: none;
 
   &__list {
-    padding: 10px;
-    width: 210px;
+    padding: toEm(10);
+    width: toRem(210);
     color: $mainColor;
-    border-radius: 4px;
+    border-radius: toEm(4);
     background-color: $mainColorGray;
 
+    @media (max-width: toRem(991)) {
+      text-align: center;
+    }
+
+
     > li:not(:last-child) {
-      margin-bottom: 10px;
+      margin-bottom: toEm(10);
     }
   }
 
-  @media (max-width: 990px) {
-    position: relative;
+  @media (max-width: toRem(991)) {
+    position: unset;
     visibility: visible;
     opacity: 1;
     transform: translate(0, 0);
@@ -395,15 +423,15 @@ $menuBody: rgba(55, 57, 63, 0.80);
         text-decoration: underline;
       }
     }
-    @media (max-width: 990px) {
-      font-size: 24px;
+    @media (max-width: toRem(991)) {
+      font-size: toRem(24);
     }
   }
 
   &__item {
-    @media (max-width: 990px) {
+    @media (max-width: toRem(991)) {
       :not(:last-child) {
-        margin-bottom: 20px;
+        margin-bottom: toEm(20);
       }
     }
   }
@@ -412,11 +440,11 @@ $menuBody: rgba(55, 57, 63, 0.80);
 .icon-menu {
   display: none;
 
-  @media (max-width: 990px) {
+  @media (max-width: toRem(991)) {
     display: block;
-    flex: 0 0 30px;
-    width: 30px;
-    height: 18px;
+    flex: 0 0 toRem(30);
+    width: toRem(30);
+    height: toRem(18);
     position: relative;
     z-index: 5;
 
@@ -424,7 +452,7 @@ $menuBody: rgba(55, 57, 63, 0.80);
     &::after,
     span {
       content: "";
-      height: 2px;
+      height: toRem(2);
       width: 100%;
       position: absolute;
       left: 0;
@@ -438,11 +466,685 @@ $menuBody: rgba(55, 57, 63, 0.80);
 
     span {
       top: 50%;
-      margin-top: -1px;
+      margin-top: toRem(-1);
     }
 
     &::after {
       bottom: 0;
+    }
+  }
+}
+
+//main
+.main {
+  padding-top: toRem(200);
+
+  @media(max-width: toRem(1160)) {
+    padding-top: toRem(165);
+  }
+
+  @media(max-width: toRem(991)) {
+    padding-top: toRem(80);
+  }
+}
+
+//hero
+.hero {
+  position: relative;
+  min-height: calc(100vh - (3.75rem + 8.125rem));
+  font-size: toRem(18);
+  display: flex;
+
+  &__background {
+    img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+      z-index: 1;
+    }
+  }
+
+  &__content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    position: relative;
+    min-height: calc(100vh - (3.75rem + 8.125rem));
+    width: 100%;
+    z-index: 5;
+    padding: toRem(40) toEm(117);
+    flex: 0 0 43%;
+    background-color: $bgHero;
+    color: $mainColor;
+
+    @media(max-width: toRem(1600)) {
+      padding: toRem(40) toEm(60);
+    }
+
+    @media(max-width: toRem(1200)) {
+      flex: 0 0 100%;
+    }
+
+    @media(max-width: toRem(750)) {
+      align-items: center;
+      padding: toRem(40);
+    }
+
+    @media(max-width: toRem(400)) {
+      padding: toRem(20);
+    }
+  }
+
+}
+
+.content {
+  &__body {
+    max-width: toRem(529);
+    @media(max-width: toRem(500)) {
+      text-align: center;
+    }
+  }
+
+  &__link {
+    font-family: "Inter", sans-serif;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: toRem(30);
+
+    @media(max-width: toRem(500)) {
+      justify-content: center;
+    }
+  }
+
+  &__text {
+    margin-bottom: toRem(35);
+    max-width: toRem(482);
+  }
+
+  &__video {
+    display: flex;
+    align-items: center;
+    gap: toRem(10);
+    text-decoration: underline;
+    transition: color 0.3s;
+
+    &::before {
+      content: "";
+      flex: 0 0 toRem(60);
+      width: toRem(60);
+      height: toRem(60);
+      background: url("../img/main/video.svg") no-repeat center center;
+    }
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $buttonBlue;
+      }
+    }
+  }
+}
+
+.subtitle {
+  font-family: "Inter", sans-serif;
+  font-size: toRem(18);
+  font-weight: 600;
+  line-height: 1.4;
+  display: flex;
+  align-items: center;
+  gap: toRem(7);
+  margin-bottom: toEm(10);
+
+  &::before {
+    content: "";
+    width: toEm(11);
+    height: toEm(11);
+    flex: 0 0 toEm(11);
+    background-color: $buttonGreen;
+  }
+
+  &--500 {
+    font-weight: 500;
+    margin-bottom: toRem(16);
+  }
+
+  @media(max-width: toRem(500)) {
+    font-size: toRem(16);
+    justify-content: center;
+  }
+}
+
+.title {
+  font-family: "Poppins", sans-serif;
+  font-weight: 700;
+  line-height: 1.2;
+  font-size: toRem(40);
+  margin-bottom: toRem(20);
+
+  &--hero {
+    font-size: toRem(60);
+
+    @media(max-width: toRem(600)) {
+      font-size: toRem(40);
+    }
+
+    @media(max-width: toRem(600)) {
+      font-size: toRem(30);
+    }
+  }
+
+  &--width {
+    max-width: toRem(413);
+    @media(max-width: toRem(991)) {
+      max-width: toRem(1250);
+      text-align: center;
+    }
+  }
+
+  &--width495 {
+    max-width: toRem(495);
+    text-align: center;
+    margin-bottom: toRem(40);
+  }
+
+  &--width370 {
+    max-width: toRem(370);
+    @media(max-width: toRem(400)) {
+      text-align: center;
+    }
+  }
+
+  span {
+    color: $buttonGreen;
+  }
+}
+
+//plan
+.plan {
+  margin-bottom: toRem(82);
+
+  > *:not(:last-child) {
+    margin-bottom: toRem(100);
+
+    @media(max-width: toRem(991)) {
+      margin-bottom: toRem(50);
+    }
+  }
+
+  &__header {
+    display: flex;
+    column-gap: toRem(69);
+
+    @media(max-width: toRem(991)) {
+      flex-direction: column-reverse;
+    }
+
+    @media(max-width: toRem(1200)) {
+      column-gap: toRem(40);
+    }
+  }
+
+  &__content {
+    max-width: toRem(673);
+    color: $mainColorGray;
+    padding: toRem(151) toRem(20) toRem(145) toRem(20);
+
+    @media(max-width: toRem(991)) {
+      max-width: toRem(1250);
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: toRem(70);
+    }
+
+    @media(max-width: toRem(600)) {
+      padding: toRem(50) toRem(15);
+    }
+  }
+
+  &__list {
+    color: $mainColorGray;
+    font-family: "Poppins", sans-serif;
+    font-size: toRem(20);
+    margin-bottom: toRem(43);
+
+    > *:not(:last-child) {
+      margin-bottom: toRem(23);
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: toRem(8);
+
+    &::before {
+      content: "";
+      flex: 0 0 toEm(27);
+      width: toEm(27);
+      height: toEm(27);
+      background: url("../img/main/arrow.svg") no-repeat center center;
+    }
+  }
+
+  &__block-card {
+    display: flex;
+    align-items: center;
+    gap: toRem(21);
+    flex-wrap: wrap;
+    margin-bottom: toRem(37);
+
+    @media(max-width: toRem(991)) {
+      justify-content: center;
+    }
+  }
+
+  &__card {
+    display: flex;
+    gap: toRem(19);
+    align-items: flex-start;
+    max-width: toRem(296);
+
+    &::before {
+      content: "";
+      flex: 0 0 toEm(39);
+      width: toEm(39);
+      height: toEm(38);
+      background: url("../img/main/diploma.svg") no-repeat center center;
+    }
+
+    &--cup {
+      &::before {
+        background: url("../img/main/cup.svg") no-repeat center center;
+      }
+    }
+  }
+}
+
+.aside {
+  font-family: "Poppins", sans-serif;
+  font-size: toRem(18);
+  flex: 0 0 43%;
+  background-color: $asideColor;
+  padding: toRem(151) toRem(52) toRem(151) toRem(352);
+  color: $mainColorGray;
+  font-weight: 600;
+
+  @media(max-width: toRem(1400)) {
+    padding: toRem(151) toRem(52) toRem(151) toRem(151);
+  }
+
+  @media(max-width: toRem(991)) {
+    padding: toRem(70);
+    max-width: toRem(1250);
+    margin: 0 auto;
+  }
+
+  @media(max-width: toRem(600)) {
+    padding: toRem(0) toRem(15);
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 410/443;
+    object-fit: cover;
+    margin-bottom: toRem(19);
+  }
+
+  &__block-info {
+    > *:not(:last-child) {
+      margin-bottom: toRem(15);
+    }
+  }
+
+  &__title {
+    font-size: toRem(30);
+  }
+
+  &__text {
+    color: $asideText;
+    font-family: "Inter", sans-serif;
+    line-height: 1.4;
+    font-weight: 400;
+
+    > *:not(:last-child) {
+      margin-bottom: toRem(10);
+    }
+  }
+
+  &__link {
+    text-decoration: underline;
+    transition: color 0.3s;
+    @media (any-hover: hover) {
+      &:hover {
+        color: $buttonBlue;
+      }
+    }
+  }
+}
+
+.text {
+  color: $asideText;
+  font-family: "Inter", sans-serif;
+  font-size: toRem(18);
+  font-weight: 400;
+  line-height: 1.4;
+
+  > *:not(:last-child) {
+    margin-bottom: toRem(10);
+  }
+
+  &--mb {
+    margin-bottom: toRem(35);
+  }
+
+  &--mb20 {
+    margin-bottom: toRem(20);
+  }
+}
+
+.card {
+  padding: toRem(32);
+  border: toRem(1) solid $cardBorder;
+
+  &__title {
+    color: $mainColorGray;
+    font-family: "Poppins", sans-serif;
+    font-size: toRem(20);
+    font-weight: 600;
+  }
+
+  &__body {
+    > *:not(:last-child) {
+      margin-bottom: toRem(5);
+    }
+  }
+
+  &__subtitle {
+    color: $asideText;
+    font-family: "Inter", sans-serif;
+    font-size: toRem(16);
+    line-height: 1.3
+  }
+}
+
+.footer-plan {
+  &__container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: toRem(40);
+
+    @media(max-width: toRem(877)) {
+      justify-content: center;
+    }
+  }
+}
+
+//solutions
+.solutions {
+  margin-bottom: toRem(131);
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: $mainColorGray;
+  }
+
+  &__block-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: toRem(32);
+    row-gap: toRem(27);
+
+    @media(max-width: toRem(1200)) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @media(max-width: toRem(770)) {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  &__link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: $buttonBlue;
+    color: $mainColor;
+    font-family: "Inter", sans-serif;
+    font-size: toRem(25);
+    font-weight: 600;
+    transition: background-color 0.3S;
+    padding: toRem(60) toRem(30);
+
+    @media (any-hover: hover) {
+      &:hover {
+        background-color: $buttonGreen
+      }
+    }
+  }
+}
+
+.card-solutions {
+  padding: toRem(30);
+  background-color: $asideColor;
+  display: flex;
+  gap: toRem(60);
+  align-items: flex-start;
+  justify-content: space-between;
+  font-weight: 600;
+  transition: background-color 0.3s;
+
+  @media(max-width: toRem(400)) {
+    padding: toRem(10);
+    gap: toRem(20);
+  }
+
+  @media (any-hover: hover) {
+    &:hover {
+      background-color: $cardBorder;
+    }
+  }
+
+  &__right {
+    > *:not(:last-child) {
+      margin-bottom: toRem(27);
+    }
+
+    h4 {
+      font-family: "Poppins", sans-serif;
+      font-size: toRem(25);
+      line-height: 1.2
+    }
+
+    a {
+      color: $buttonBlue;
+      font-family: "Inter", sans-serif;
+      font-size: toRem(18);
+      text-transform: capitalize;
+      transition: color 0.3s;
+
+      @media (any-hover: hover) {
+        &:hover {
+          color: $buttonGreen
+        }
+      }
+    }
+  }
+
+  &__left {
+    max-width: toRem(72);
+    max-height: toRem(72);
+  }
+}
+
+//choose
+.choose {
+  position: relative;
+  font-family: "Inter", sans-serif;
+  font-size: toRem(18);
+  background-color: $mainColorGray;
+  color: $mainColor;
+  padding: toRem(138) toRem(0);
+
+  @media (max-width: toRem(1200)) {
+    padding: toRem(100) toRem(0) toRem(15) toRem(0);
+  }
+
+  &__container {
+    @media (max-width: toRem(1200)) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: toRem(30);
+    }
+  }
+
+  &__bg-img {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 45%;
+    height: 100%;
+    object-fit: cover;
+    margin: 0 toRem(-15);
+
+    @media (max-width: toRem(1200)) {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      aspect-ratio: 868/741;
+      object-fit: cover;
+    }
+  }
+
+  &__header-content > *:not(:last-child) {
+    margin-bottom: toRem(13);
+  }
+
+  &__content {
+    max-width: toRem(610);
+    min-width: toRem(300);
+
+    > *:not(:last-child) {
+      margin-bottom: toRem(36);
+    }
+  }
+
+  &__main-content {
+    display: flex;
+    margin: 0 toRem(-7.5);
+    row-gap: toRem(15);
+    flex-wrap: wrap;
+  }
+
+  &__card {
+    flex: 0 1 50%;
+    padding: 0 toRem(7.5);
+    transition: 0.3s ease;
+
+    @media (max-width: toRem(700)) {
+      flex: 0 1 100%;
+    }
+  }
+
+  &__content-card {
+    display: flex;
+    align-items: center;
+    gap: toRem(12);
+    padding: toRem(27) toRem(30);
+    background-color: #2E2F34;
+  }
+
+  &__block-info {
+    > *:not(:last-child) {
+      margin-bottom: toRem(5);
+    }
+  }
+
+  &__img {
+    flex: 0 0 toRem(79);
+    width: toRem(79);
+    height: toRem(79);
+  }
+
+  &__title-card {
+    font-size: toRem(16);
+    line-height: 1.3;
+  }
+
+  &__subtitle-card {
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+  }
+
+  &__footer-content {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 toRem(-18.5);
+    row-gap: toRem(23);
+  }
+
+  &__item-footer {
+    display: flex;
+    align-items: center;
+    gap: toRem(8);
+    flex: 0 1 50%;
+    padding: 0 toRem(18.5);
+    font-family: "Poppins", sans-serif;
+    font-size: toRem(20);
+    font-weight: 700;
+
+    @media (max-width: toRem(700)) {
+      flex: 0 1 100%;
+    }
+
+    &--before {
+      &::before {
+        content: "";
+        width: toRem(27);
+        height: toRem(27);
+        flex: 0 0 toRem(27);
+        background: url(../img/main/check.svg) no-repeat;
+      }
+    }
+  }
+
+  &__span-item {
+    font-weight: 400;
+
+    &--yellow {
+      display: flex;
+      align-items: center;
+      gap: toRem(5);
+      color: $hoverYellow;
+    }
+  }
+
+  &__link-item {
+    font-family: "Inter", sans-serif;
+    font-size: toRem(18);
+    color: $buttonGreen;
+    font-weight: 600;
+    text-decoration: underline;
+    transition: color 0.3s ease;
+    cursor: pointer;
+
+    @media (any-hover: hover) {
+      &:hover {
+        color: $hoverYellow;
+      }
     }
   }
 }
