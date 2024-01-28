@@ -84,6 +84,8 @@ $footerBorder: #6C6D72;
 $footerForm: #474950;
 $colorGreen: #208068;
 $borderGreen: #2D9E82;
+$formColor: #F8F8F8;
+$borderForm: #DDDDDD;
 
 //header
 .panel-info {
@@ -332,6 +334,10 @@ $borderGreen: #2D9E82;
     padding: toEm(15);
   }
 
+  @media(max-width: toRem(500)) {
+    width: 100%;
+  }
+
   &--blue {
     color: $mainColor;
     background-color: $buttonBlue;
@@ -345,6 +351,10 @@ $borderGreen: #2D9E82;
 
   &--padding {
     padding: toEm(21) toEm(27);
+  }
+
+  &--padding61 {
+    padding: toEm(21) toEm(61);
   }
 
   &--green {
@@ -362,10 +372,6 @@ $borderGreen: #2D9E82;
   &--greenColorWhite {
     color: $mainColor;
     padding: toRem(21) toRem(45);
-  }
-
-  &--width {
-    width: 100%;
   }
 
   &--gray {
@@ -718,6 +724,14 @@ $borderGreen: #2D9E82;
     }
   }
 
+  &--width426 {
+    max-width: toRem(426);
+
+    @media (max-width: toRem(500)) {
+      text-align: center;
+    }
+  }
+
   span {
     color: $buttonGreen;
   }
@@ -915,6 +929,14 @@ $borderGreen: #2D9E82;
 
   &--gray {
     color: $mainColorGray;
+  }
+
+  &--mb34 {
+    margin-bottom: toRem(34);
+  }
+
+  &--white {
+    color: $mainColor;
   }
 }
 
@@ -1385,6 +1407,223 @@ $borderGreen: #2D9E82;
   }
 }
 
+//work
+.work {
+  padding: toRem(123) toRem(0);
+  background-color: $buttonBlue;
+  color: $mainColor;
+
+  @media (max-width: toRem(991)) {
+    padding: toRem(60) toRem(0);
+  }
+
+  &__body {
+    display: flex;
+    gap: toRem(56);
+
+    @media(max-width: toRem(991)) {
+      justify-content: center;
+      flex-direction: column;
+    }
+  }
+
+  &__content {
+    flex: 0 1 50%;
+
+    @media(max-width: toRem(991)) {
+      flex: 0 1 100%;
+    }
+  }
+
+  &__card {
+    background-color: $buttonGreen;
+    padding: toRem(35);
+    margin-bottom: toRem(50);
+
+    @media(max-width: toRem(500)) {
+      padding: toRem(15);
+    }
+  }
+
+  &__text {
+    display: flex;
+    align-items: center;
+    gap: toRem(23);
+    font-family: "Poppins", sans-serif;
+    font-size: toRem(25);
+    line-height: 1.2;
+
+    @media(max-width: toRem(500)) {
+      text-align: center;
+      flex-direction: column-reverse;
+    }
+
+    span {
+      font-weight: 700;
+    }
+
+    &::before {
+      content: "";
+      width: toRem(128);
+      height: toRem(128);
+      flex: 0 0 toRem(128);
+      background-image: url("../img/main/work-project.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+    }
+  }
+
+  &__list {
+    max-width: toRem(514);
+
+    @media(max-width: toRem(991)) {
+      max-width: 100%;
+    }
+
+    > *:not(:last-child) {
+      margin-bottom: toRem(18);
+    }
+  }
+
+  &__form {
+    background-color: $mainColor;
+    padding: toRem(58);
+
+    @media(max-width: toRem(500)) {
+      padding: toRem(15);
+    }
+  }
+
+}
+
+.item {
+  display: flex;
+  align-items: flex-start;
+  gap: toRem(16);
+
+  &::before {
+    content: "";
+    width: toRem(27);
+    height: toRem(27);
+    flex: 0 0 toRem(27);
+    background-image: url("../img/main/work-arrow.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+
+  &__title {
+    font-family: "Poppins", sans-serif;
+    font-size: toRem(22);
+    font-weight: 600;
+    margin-bottom: toRem(5);
+  }
+
+  &--border {
+    padding-bottom: toRem(21);
+    border-bottom: toRem(1) solid $mainColor;
+  }
+}
+
+.form {
+  > *:not(:last-child) {
+    margin-bottom: toRem(30);
+  }
+
+  &__input {
+    padding: toRem(21) toRem(33);
+    width: 100%;
+    background-color: $formColor;
+    border: toRem(1) solid $borderForm;
+
+    &::placeholder {
+      font-family: "Inter", sans-serif;
+      font-size: toRem(18);
+      color: $mainColorGray;
+    }
+
+    &--textarea {
+      min-height: toRem(139);
+      width: 100%;
+      height: 100%;
+      resize: vertical;
+    }
+  }
+
+  &__block {
+    &--two {
+      flex: 0 1 50%;
+      padding: toRem(0) toRem(11);
+
+      @media(max-width: toRem(500)) {
+        flex: 0 1 100%;
+      }
+    }
+  }
+
+  &__time-info {
+    display: flex;
+    margin: toRem(0) toRem(-11);
+
+    @media(max-width: toRem(500)) {
+      flex-direction: column;
+
+      > *:not(:last-child) {
+      margin-bottom: toRem(30);
+    }
+    }
+  }
+
+}
+
+//team
+.team {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: toRem(733);
+  margin-bottom: toRem(200);
+
+  @media (max-width: toRem(991)) {
+    margin-bottom: toRem(100);
+  }
+
+  &__bg {
+    img {
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index:1;
+      object-fit: cover;
+    }
+  }
+
+  &__button {
+    padding: toRem(87) toRem(130);
+    background-color:$menuBody;
+    position: relative;
+    z-index: 5;
+    color: $mainColor;
+    font-family: "Poppins",sans-serif;
+    font-size: toRem(40);
+    font-weight: 700;
+    line-height: 1.2;
+
+    @media (max-width: toRem(650)) {
+      font-size: toRem(30);
+      padding: toRem(65) toRem(98);
+    }
+
+    @media (max-width: toRem(460)) {
+      font-size: toRem(20);
+      padding: toRem(43) toRem(65);
+    }
+  }
+}
+
 //news
 .news {
   color: $mainColorGray;
@@ -1405,6 +1644,11 @@ $borderGreen: #2D9E82;
     align-items: center;
     justify-content: space-between;
     gap: toRem(40);
+
+    @media(max-width: toRem(500)) {
+      flex-direction: column;
+      gap: toRem(0);
+    }
   }
 
   &__body {
