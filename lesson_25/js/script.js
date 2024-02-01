@@ -20,12 +20,12 @@ console.log(bodyElement);
 
 const addListToBody = (numItems = 21) => {
     let ul = document.createElement('ul');
-    for (let i = 0; i < numItems; i++) {
+    for (let i = 1; i < numItems; i++) {
         let li = document.createElement('li');
-        li.innerText = `Елемент ${i + 1}`;
+        li.innerText = `Елемент ${i}`;
         ul.appendChild(li);
     }
-    document.body.appendChild(ul);
+    bodyElement.appendChild(ul);
 }
 
 addListToBody();
@@ -80,7 +80,7 @@ if (bodyElement.classList.contains('.loaded')) {
 const items = document.querySelectorAll('.item');
 items.forEach((item, index) => {
     item.classList.add('active');
-    item.textContent = `Елемент №${index + 1}`;
+    item.innerText = `Елемент №${index + 1}`;
 });
 
 // крок перший - за допомогою методу querySelectorAll звертаємось до всіх елементів з класом item
