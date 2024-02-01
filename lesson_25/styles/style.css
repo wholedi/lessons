@@ -1,0 +1,18 @@
+body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px;
+  font-size: 20px;
+}
+
+.task-5 {
+  text-align: center;
+}
+
+.button {
+  color: white;
+  padding: 20px 60px;
+  background-color: green;
+}
+
+/*# sourceMappingURL=style.css.map */
