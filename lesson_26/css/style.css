@@ -1,0 +1,41 @@
+body {
+    opacity: 0;
+    font-size: 20px;
+    text-align: center;
+
+}
+
+.loaded {
+    opacity: 1;
+}
+
+.wrapper {
+    min-height: 100%;
+    overflow: clip;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.wrapper > main {
+    flex-grow: 1;
+}
+
+.header,
+.footer {
+    background-color: #f4f4f4;
+    font-size: 40px;
+    padding: 20px;
+    text-align: center;
+}
+
+.item {
+    padding: 40px;
+    background-color: orange;
+    font-size: 40px;
+;
+}
+
+.footer {
+    background-color: orange;
+}
